@@ -48,7 +48,7 @@
 
     <div class="row">
         <div class="col-md-9 col-sm-9 col-xs-12">
-            <div class="x_panel tile fixed_height_320">
+            <div class="x_panel tile">
                 <div class="x_title">
                     <h2>Forum Post Response</h2>
                     <ul class="nav navbar-right panel_toolbox">
@@ -109,7 +109,7 @@
 
 
         <div class="col-md-3 col-sm-12 col-xs-12">
-            <div class="x_panel tile fixed_height_320">
+            <div class="x_panel tile">
                 <div class="x_title">
                     <h2>Active Members</h2>
                     <ul class="nav navbar-right panel_toolbox">
