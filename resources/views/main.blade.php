@@ -82,5 +82,9 @@
 {{Html::script('vendors/dropzone/dist/min/dropzone.min.js')}}
 {{Html::script('build/js/custom.min.js')}}
 
+
+
+@yield('page_script')
+
 </body>
 </html>

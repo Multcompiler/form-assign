@@ -30,3 +30,8 @@ Route::get('/forum/post/1', [
 Route::get('/profile', [
     'uses' => 'ProfileController@profile', 'as' => 'my_profile'
 ]);
+
+//Users Controller
+Route::get('/users/view', [
+    'uses' => 'UsersController@view_users', 'as' => 'view_users'
+]);
