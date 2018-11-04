@@ -25,6 +25,9 @@
             <li>
                 <a><i class="fa fa-home"></i> Home </a>
             </li>
+            <li>
+                <a href="{{route('forum')}}"><i class="fa fa-bar-chart-o"></i> Forum </a>
+            </li>
 
             <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">

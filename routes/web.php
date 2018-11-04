@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('index');
 });
+
+//Forum Controller
+Route::get('/forum', [
+    'uses' => 'ForumController@forum', 'as' => 'forum'
+]);
+Route::get('/forum/post/add', [
+    'uses' => 'ForumController@add_post', 'as' => 'add_forum_post'
+]);
+Route::get('/forum/post/1', [
+    'uses' => 'ForumController@single_post', 'as' => 'view_single_post'
+]);
