@@ -16,7 +16,10 @@
     {{Html::style('vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css')}}
     {{Html::style('vendors/jqvmap/dist/jqvmap.min.css')}}
     {{Html::style('vendors/bootstrap-daterangepicker/daterangepicker.css')}}
+    {{Html::style('vendors/dropzone/dist/min/dropzone.min.css')}}
     {{Html::style('build/css/custom.min.css')}}
+
+    @yield('page_css')
 
 </head>
 
@@ -76,6 +79,8 @@
 {{Html::script('vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}
 {{Html::script('vendors/moment/min/moment.min.js')}}
 {{Html::script('vendors/bootstrap-daterangepicker/daterangepicker.js')}}
+{{Html::script('vendors/dropzone/dist/min/dropzone.min.js')}}
 {{Html::script('build/js/custom.min.js')}}
+
 </body>
 </html>

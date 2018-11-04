@@ -23,7 +23,10 @@
         <h3>General</h3>
         <ul class="nav side-menu">
             <li>
-                <a><i class="fa fa-home"></i> Home </a>
+                <a href="/"><i class="fa fa-home"></i> Home </a>
+            </li>
+            <li>
+                <a href="{{route('my_profile')}}"><i class="fa fa-user"></i>My Profile </a>
             </li>
             <li>
                 <a href="{{route('forum')}}"><i class="fa fa-bar-chart-o"></i> Forum </a>

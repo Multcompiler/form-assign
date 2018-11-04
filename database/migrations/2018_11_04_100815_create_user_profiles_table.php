@@ -17,6 +17,8 @@ class CreateUserProfilesTable extends Migration
             $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');
+            $table->string('gender');
+            $table->string('location');
             $table->string('date_of_birth');
             $table->string('postal_code');
             $table->timestamps();

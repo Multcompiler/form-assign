@@ -25,3 +25,8 @@ Route::get('/forum/post/add', [
 Route::get('/forum/post/1', [
     'uses' => 'ForumController@single_post', 'as' => 'view_single_post'
 ]);
+
+//Profile Controller
+Route::get('/profile', [
+    'uses' => 'ProfileController@profile', 'as' => 'my_profile'
+]);
