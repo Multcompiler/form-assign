@@ -31,7 +31,11 @@ interface HandlerInterface
      *
      * @param array $record Partial log record containing only a level key
      *
+<<<<<<< HEAD
      * @return Boolean
+=======
+     * @return bool
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     public function isHandling(array $record);
 
@@ -46,7 +50,11 @@ interface HandlerInterface
      * calling further handlers in the stack with a given log record.
      *
      * @param  array   $record The record to handle
+<<<<<<< HEAD
      * @return Boolean true means that this handler handled the record, and that bubbling is not permitted.
+=======
+     * @return bool true means that this handler handled the record, and that bubbling is not permitted.
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      *                        false means the record was either not processed or that this handler allows bubbling.
      */
     public function handle(array $record);

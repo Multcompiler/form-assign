@@ -12,6 +12,10 @@
 namespace Monolog\Handler;
 
 use Monolog\Logger;
+<<<<<<< HEAD
+=======
+use Monolog\Formatter\FormatterInterface;
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 use Monolog\Formatter\LineFormatter;
 use Swift;
 
@@ -29,7 +33,11 @@ class SwiftMailerHandler extends MailHandler
      * @param \Swift_Mailer           $mailer  The mailer to use
      * @param callable|\Swift_Message $message An example message for real messages, only the body will be replaced
      * @param int                     $level   The minimum logging level at which this handler will be triggered
+<<<<<<< HEAD
      * @param Boolean                 $bubble  Whether the messages that are handled can bubble up the stack or not
+=======
+     * @param bool                    $bubble  Whether the messages that are handled can bubble up the stack or not
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     public function __construct(\Swift_Mailer $mailer, $message, $level = Logger::ERROR, $bubble = true)
     {
@@ -48,6 +56,20 @@ class SwiftMailerHandler extends MailHandler
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Gets the formatter for the Swift_Message subject.
+     *
+     * @param  string             $format The format of the subject
+     * @return FormatterInterface
+     */
+    protected function getSubjectFormatter($format)
+    {
+        return new LineFormatter($format);
+    }
+
+    /**
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      * Creates instance of Swift_Message to be sent
      *
      * @param  string         $content formatted email body to be sent
@@ -69,7 +91,11 @@ class SwiftMailerHandler extends MailHandler
         }
 
         if ($records) {
+<<<<<<< HEAD
             $subjectFormatter = new LineFormatter($message->getSubject());
+=======
+            $subjectFormatter = $this->getSubjectFormatter($message->getSubject());
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
             $message->setSubject($subjectFormatter->format($this->getHighestRecord($records)));
         }
 

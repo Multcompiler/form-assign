@@ -16,7 +16,11 @@ namespace Monolog\Processor;
  *
  * @author Rob Jensen
  */
+<<<<<<< HEAD
 abstract class MemoryProcessor
+=======
+abstract class MemoryProcessor implements ProcessorInterface
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 {
     /**
      * @var bool If true, get the real size of memory allocated from system. Else, only the memory used by emalloc() is reported.
@@ -34,8 +38,13 @@ abstract class MemoryProcessor
      */
     public function __construct($realUsage = true, $useFormatting = true)
     {
+<<<<<<< HEAD
         $this->realUsage = (boolean) $realUsage;
         $this->useFormatting = (boolean) $useFormatting;
+=======
+        $this->realUsage = (bool) $realUsage;
+        $this->useFormatting = (bool) $useFormatting;
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     }
 
     /**

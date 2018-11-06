@@ -193,6 +193,18 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(@json_encode(array($foo, $bar)), $res);
     }
 
+<<<<<<< HEAD
+=======
+    public function testCanNormalizeReferences()
+    {
+        $formatter = new NormalizerFormatter();
+        $x = array('foo' => 'bar');
+        $y = array('x' => &$x);
+        $x['y'] = &$y;
+        $formatter->format($y);
+    }
+
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     public function testIgnoresInvalidTypes()
     {
         // set up the recursion
@@ -217,6 +229,27 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(@json_encode(array($resource)), $res);
     }
 
+<<<<<<< HEAD
+=======
+    public function testNormalizeHandleLargeArraysWithExactly1000Items()
+    {
+        $formatter = new NormalizerFormatter();
+        $largeArray = range(1, 1000);
+
+        $res = $formatter->format(array(
+            'level_name' => 'CRITICAL',
+            'channel' => 'test',
+            'message' => 'bar',
+            'context' => array($largeArray),
+            'datetime' => new \DateTime,
+            'extra' => array(),
+        ));
+
+        $this->assertCount(1000, $res['context'][0]);
+        $this->assertArrayNotHasKey('...', $res['context'][0]);
+    }
+
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     public function testNormalizeHandleLargeArrays()
     {
         $formatter = new NormalizerFormatter();
@@ -231,7 +264,11 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
             'extra' => array(),
         ));
 
+<<<<<<< HEAD
         $this->assertCount(1000, $res['context'][0]);
+=======
+        $this->assertCount(1001, $res['context'][0]);
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         $this->assertEquals('Over 1000 items (2000 total), aborting normalization', $res['context'][0]['...']);
     }
 
@@ -380,6 +417,32 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
             $result['context']['exception']['trace'][0]
         );
     }
+<<<<<<< HEAD
+=======
+
+    public function testExceptionTraceDoesNotLeakCallUserFuncArgs()
+    {
+        try {
+            $arg = new TestInfoLeak;
+            call_user_func(array($this, 'throwHelper'), $arg, $dt = new \DateTime());
+        } catch (\Exception $e) {
+        }
+
+        $formatter = new NormalizerFormatter();
+        $record = array('context' => array('exception' => $e));
+        $result = $formatter->format($record);
+
+        $this->assertSame(
+            '{"function":"throwHelper","class":"Monolog\\\\Formatter\\\\NormalizerFormatterTest","type":"->","args":["[object] (Monolog\\\\Formatter\\\\TestInfoLeak)","'.$dt->format('Y-m-d H:i:s').'"]}',
+            $result['context']['exception']['trace'][0]
+        );
+    }
+
+    private function throwHelper($arg)
+    {
+        throw new \RuntimeException('Thrown');
+    }
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 }
 
 class TestFooNorm
@@ -421,3 +484,14 @@ class TestToStringError
         throw new \RuntimeException('Could not convert to string');
     }
 }
+<<<<<<< HEAD
+=======
+
+class TestInfoLeak
+{
+    public function __toString()
+    {
+        return 'Sensitive information';
+    }
+}
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d

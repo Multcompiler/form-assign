@@ -11,6 +11,11 @@
 
 namespace Monolog\Formatter;
 
+<<<<<<< HEAD
+=======
+use Monolog\Utils;
+
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 /**
  * Formats incoming records into a one-line string
  *
@@ -129,17 +134,29 @@ class LineFormatter extends NormalizerFormatter
     {
         // TODO 2.0 only check for Throwable
         if (!$e instanceof \Exception && !$e instanceof \Throwable) {
+<<<<<<< HEAD
             throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.get_class($e));
+=======
+            throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.Utils::getClass($e));
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         }
 
         $previousText = '';
         if ($previous = $e->getPrevious()) {
             do {
+<<<<<<< HEAD
                 $previousText .= ', '.get_class($previous).'(code: '.$previous->getCode().'): '.$previous->getMessage().' at '.$previous->getFile().':'.$previous->getLine();
             } while ($previous = $previous->getPrevious());
         }
 
         $str = '[object] ('.get_class($e).'(code: '.$e->getCode().'): '.$e->getMessage().' at '.$e->getFile().':'.$e->getLine().$previousText.')';
+=======
+                $previousText .= ', '.Utils::getClass($previous).'(code: '.$previous->getCode().'): '.$previous->getMessage().' at '.$previous->getFile().':'.$previous->getLine();
+            } while ($previous = $previous->getPrevious());
+        }
+
+        $str = '[object] ('.Utils::getClass($e).'(code: '.$e->getCode().'): '.$e->getMessage().' at '.$e->getFile().':'.$e->getLine().$previousText.')';
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         if ($this->includeStacktraces) {
             $str .= "\n[stacktrace]\n".$e->getTraceAsString()."\n";
         }

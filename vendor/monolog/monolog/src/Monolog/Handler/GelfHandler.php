@@ -50,6 +50,7 @@ class GelfHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function close()
     {
         $this->publisher = null;
@@ -58,6 +59,8 @@ class GelfHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
+=======
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     protected function write(array $record)
     {
         $this->publisher->publish($record['formatted']);

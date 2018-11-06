@@ -19,7 +19,11 @@ use Monolog\Logger;
  * @author Nick Otter
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
+<<<<<<< HEAD
 class GitProcessor
+=======
+class GitProcessor implements ProcessorInterface
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 {
     private $level;
     private static $cache;

@@ -158,7 +158,11 @@ class FirePHPHandler extends AbstractProcessingHandler
     /**
      * Verifies if the headers are accepted by the current user agent
      *
+<<<<<<< HEAD
      * @return Boolean
+=======
+     * @return bool
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     protected function headersAccepted()
     {

@@ -18,7 +18,11 @@ use Monolog\Logger;
  *
  * @author Jonathan A. Schweder <jonathanschweder@gmail.com>
  */
+<<<<<<< HEAD
 class MercurialProcessor
+=======
+class MercurialProcessor implements ProcessorInterface
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 {
     private $level;
     private static $cache;

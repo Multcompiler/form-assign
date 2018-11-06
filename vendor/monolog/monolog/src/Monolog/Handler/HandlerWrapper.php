@@ -11,6 +11,10 @@
 
 namespace Monolog\Handler;
 
+<<<<<<< HEAD
+=======
+use Monolog\ResettableInterface;
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 use Monolog\Formatter\FormatterInterface;
 
 /**
@@ -30,7 +34,11 @@ use Monolog\Formatter\FormatterInterface;
  *
  * @author Alexey Karapetov <alexey@karapetov.com>
  */
+<<<<<<< HEAD
 class HandlerWrapper implements HandlerInterface
+=======
+class HandlerWrapper implements HandlerInterface, ResettableInterface
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 {
     /**
      * @var HandlerInterface
@@ -105,4 +113,14 @@ class HandlerWrapper implements HandlerInterface
     {
         return $this->handler->getFormatter();
     }
+<<<<<<< HEAD
+=======
+
+    public function reset()
+    {
+        if ($this->handler instanceof ResettableInterface) {
+            return $this->handler->reset();
+        }
+    }
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 }

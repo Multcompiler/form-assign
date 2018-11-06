@@ -54,6 +54,55 @@ class TestHandlerTest extends TestCase
         $this->assertEquals(array($record), $records);
     }
 
+<<<<<<< HEAD
+=======
+    public function testHandlerAssertEmptyContext() {
+        $handler = new TestHandler;
+        $record  = $this->getRecord(Logger::WARNING, 'test', array());
+        $this->assertFalse($handler->hasWarning(array(
+            'message' => 'test',
+            'context' => array(),
+        )));
+
+        $handler->handle($record);
+
+        $this->assertTrue($handler->hasWarning(array(
+            'message' => 'test',
+            'context' => array(),
+        )));
+        $this->assertFalse($handler->hasWarning(array(
+            'message' => 'test',
+            'context' => array(
+                'foo' => 'bar'
+            ),
+        )));
+    }
+
+    public function testHandlerAssertNonEmptyContext() {
+        $handler = new TestHandler;
+        $record  = $this->getRecord(Logger::WARNING, 'test', array('foo' => 'bar'));
+        $this->assertFalse($handler->hasWarning(array(
+            'message' => 'test',
+            'context' => array(
+                'foo' => 'bar'
+            ),
+        )));
+
+        $handler->handle($record);
+
+        $this->assertTrue($handler->hasWarning(array(
+            'message' => 'test',
+            'context' => array(
+                'foo' => 'bar'
+            ),
+        )));
+        $this->assertFalse($handler->hasWarning(array(
+            'message' => 'test',
+            'context' => array(),
+        )));
+    }
+
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     public function methodProvider()
     {
         return array(

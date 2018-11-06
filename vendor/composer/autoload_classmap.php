@@ -2138,6 +2138,10 @@ return array(
     'Monolog\\Handler\\HandlerWrapper' => $vendorDir . '/monolog/monolog/src/Monolog/Handler/HandlerWrapper.php',
     'Monolog\\Handler\\HipChatHandler' => $vendorDir . '/monolog/monolog/src/Monolog/Handler/HipChatHandler.php',
     'Monolog\\Handler\\IFTTTHandler' => $vendorDir . '/monolog/monolog/src/Monolog/Handler/IFTTTHandler.php',
+<<<<<<< HEAD
+=======
+    'Monolog\\Handler\\InsightOpsHandler' => $vendorDir . '/monolog/monolog/src/Monolog/Handler/InsightOpsHandler.php',
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     'Monolog\\Handler\\LogEntriesHandler' => $vendorDir . '/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php',
     'Monolog\\Handler\\LogglyHandler' => $vendorDir . '/monolog/monolog/src/Monolog/Handler/LogglyHandler.php',
     'Monolog\\Handler\\MailHandler' => $vendorDir . '/monolog/monolog/src/Monolog/Handler/MailHandler.php',
@@ -2176,11 +2180,21 @@ return array(
     'Monolog\\Processor\\MemoryUsageProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php',
     'Monolog\\Processor\\MercurialProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/MercurialProcessor.php',
     'Monolog\\Processor\\ProcessIdProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/ProcessIdProcessor.php',
+<<<<<<< HEAD
+=======
+    'Monolog\\Processor\\ProcessorInterface' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/ProcessorInterface.php',
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     'Monolog\\Processor\\PsrLogMessageProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/PsrLogMessageProcessor.php',
     'Monolog\\Processor\\TagProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/TagProcessor.php',
     'Monolog\\Processor\\UidProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
     'Monolog\\Processor\\WebProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
     'Monolog\\Registry' => $vendorDir . '/monolog/monolog/src/Monolog/Registry.php',
+<<<<<<< HEAD
+=======
+    'Monolog\\ResettableInterface' => $vendorDir . '/monolog/monolog/src/Monolog/ResettableInterface.php',
+    'Monolog\\SignalHandler' => $vendorDir . '/monolog/monolog/src/Monolog/SignalHandler.php',
+    'Monolog\\Utils' => $vendorDir . '/monolog/monolog/src/Monolog/Utils.php',
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     'Overtrue\\LaravelLang\\Commands\\Publish' => $vendorDir . '/overtrue/laravel-lang/src/Commands/Publish.php',
     'Overtrue\\LaravelLang\\FileLoader' => $vendorDir . '/overtrue/laravel-lang/src/FileLoader.php',
     'Overtrue\\LaravelLang\\TranslationServiceProvider' => $vendorDir . '/overtrue/laravel-lang/src/TranslationServiceProvider.php',

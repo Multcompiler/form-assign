@@ -219,6 +219,24 @@ class HipChatHandler extends SocketHandler
     protected function write(array $record)
     {
         parent::write($record);
+<<<<<<< HEAD
+=======
+        $this->finalizeWrite();
+    }
+
+    /**
+     * Finalizes the request by reading some bytes and then closing the socket
+     *
+     * If we do not read some but close the socket too early, hipchat sometimes
+     * drops the request entirely.
+     */
+    protected function finalizeWrite()
+    {
+        $res = $this->getResource();
+        if (is_resource($res)) {
+            @fread($res, 2048);
+        }
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         $this->closeSocket();
     }
 

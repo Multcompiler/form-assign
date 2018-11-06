@@ -18,6 +18,11 @@ use Monolog\Formatter\NormalizerFormatter;
  * Class to record a log on a NewRelic application.
  * Enabling New Relic High Security mode may prevent capture of useful information.
  *
+<<<<<<< HEAD
+=======
+ * This handler requires a NormalizerFormatter to function and expects an array in $record['formatted']
+ *
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
  * @see https://docs.newrelic.com/docs/agents/php-agent
  * @see https://docs.newrelic.com/docs/accounts-partnerships/accounts/security/high-security
  */
@@ -84,7 +89,11 @@ class NewRelicHandler extends AbstractProcessingHandler
             unset($record['formatted']['context']['transaction_name']);
         }
 
+<<<<<<< HEAD
         if (isset($record['context']['exception']) && $record['context']['exception'] instanceof \Exception) {
+=======
+        if (isset($record['context']['exception']) && ($record['context']['exception'] instanceof \Exception || (PHP_VERSION_ID >= 70000 && $record['context']['exception'] instanceof \Throwable))) {
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
             newrelic_notice_error($record['message'], $record['context']['exception']);
             unset($record['formatted']['context']['exception']);
         } else {

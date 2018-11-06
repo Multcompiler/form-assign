@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
 class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
+=======
+class ComposerStaticInit2d345994ba74feaae3710d9094409c46
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -2560,6 +2564,10 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'Monolog\\Handler\\HandlerWrapper' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/HandlerWrapper.php',
         'Monolog\\Handler\\HipChatHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/HipChatHandler.php',
         'Monolog\\Handler\\IFTTTHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/IFTTTHandler.php',
+<<<<<<< HEAD
+=======
+        'Monolog\\Handler\\InsightOpsHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/InsightOpsHandler.php',
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         'Monolog\\Handler\\LogEntriesHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php',
         'Monolog\\Handler\\LogglyHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/LogglyHandler.php',
         'Monolog\\Handler\\MailHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/MailHandler.php',
@@ -2598,11 +2606,21 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'Monolog\\Processor\\MemoryUsageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php',
         'Monolog\\Processor\\MercurialProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MercurialProcessor.php',
         'Monolog\\Processor\\ProcessIdProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/ProcessIdProcessor.php',
+<<<<<<< HEAD
+=======
+        'Monolog\\Processor\\ProcessorInterface' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/ProcessorInterface.php',
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         'Monolog\\Processor\\PsrLogMessageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/PsrLogMessageProcessor.php',
         'Monolog\\Processor\\TagProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/TagProcessor.php',
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
+<<<<<<< HEAD
+=======
+        'Monolog\\ResettableInterface' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ResettableInterface.php',
+        'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
+        'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         'Overtrue\\LaravelLang\\Commands\\Publish' => __DIR__ . '/..' . '/overtrue/laravel-lang/src/Commands/Publish.php',
         'Overtrue\\LaravelLang\\FileLoader' => __DIR__ . '/..' . '/overtrue/laravel-lang/src/FileLoader.php',
         'Overtrue\\LaravelLang\\TranslationServiceProvider' => __DIR__ . '/..' . '/overtrue/laravel-lang/src/TranslationServiceProvider.php',
@@ -4628,11 +4646,19 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInit706a77bb765abeb42f1df7bae162a23e::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit706a77bb765abeb42f1df7bae162a23e::$prefixDirsPsr4;
             $loader->fallbackDirsPsr4 = ComposerStaticInit706a77bb765abeb42f1df7bae162a23e::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit706a77bb765abeb42f1df7bae162a23e::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit706a77bb765abeb42f1df7bae162a23e::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInit2d345994ba74feaae3710d9094409c46::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit2d345994ba74feaae3710d9094409c46::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit2d345994ba74feaae3710d9094409c46::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit2d345994ba74feaae3710d9094409c46::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit2d345994ba74feaae3710d9094409c46::$classMap;
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 
         }, null, ClassLoader::class);
     }

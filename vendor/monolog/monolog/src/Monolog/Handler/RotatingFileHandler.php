@@ -39,9 +39,15 @@ class RotatingFileHandler extends StreamHandler
      * @param string   $filename
      * @param int      $maxFiles       The maximal amount of files to keep (0 means unlimited)
      * @param int      $level          The minimum logging level at which this handler will be triggered
+<<<<<<< HEAD
      * @param Boolean  $bubble         Whether the messages that are handled can bubble up the stack or not
      * @param int|null $filePermission Optional file permissions (default (0644) are only for owner read/write)
      * @param Boolean  $useLocking     Try to lock log file before doing any writes
+=======
+     * @param bool     $bubble         Whether the messages that are handled can bubble up the stack or not
+     * @param int|null $filePermission Optional file permissions (default (0644) are only for owner read/write)
+     * @param bool     $useLocking     Try to lock log file before doing any writes
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     public function __construct($filename, $maxFiles = 0, $level = Logger::DEBUG, $bubble = true, $filePermission = null, $useLocking = false)
     {
@@ -66,6 +72,21 @@ class RotatingFileHandler extends StreamHandler
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+    public function reset()
+    {
+        parent::reset();
+
+        if (true === $this->mustRotate) {
+            $this->rotate();
+        }
+    }
+
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     public function setFilenameFormat($filenameFormat, $dateFormat)
     {
         if (!preg_match('{^Y(([/_.-]?m)([/_.-]?d)?)?$}', $dateFormat)) {
@@ -166,7 +187,11 @@ class RotatingFileHandler extends StreamHandler
         $fileInfo = pathinfo($this->filename);
         $glob = str_replace(
             array('{filename}', '{date}'),
+<<<<<<< HEAD
             array($fileInfo['filename'], '*'),
+=======
+            array($fileInfo['filename'], '[0-9][0-9][0-9][0-9]*'),
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
             $fileInfo['dirname'] . '/' . $this->filenameFormat
         );
         if (!empty($fileInfo['extension'])) {

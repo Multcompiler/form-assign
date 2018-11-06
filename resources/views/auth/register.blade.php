@@ -5,14 +5,22 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+<<<<<<< HEAD
                 <div class="panel-heading">User registration</div>
+=======
+                <div class="panel-heading">Register</div>
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+<<<<<<< HEAD
                             <label for="name" class="col-md-4 control-label">username</label>
+=======
+                            <label for="name" class="col-md-4 control-label">Name</label>
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -26,7 +34,11 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+<<<<<<< HEAD
                             <label for="email" class="col-md-4 control-label">E-Mail address</label>
+=======
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -54,13 +66,18 @@
                         </div>
 
                         <div class="form-group">
+<<<<<<< HEAD
                             <label for="password-confirm" class="col-md-4 control-label">Repeat the password</label>
+=======
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
 
+<<<<<<< HEAD
                         <div class="form-group {{ $errors->has('captcha') ? ' has-error' : '' }}">
                             <label for="captcha" class="col-md-4 control-label">Verification code</label>
 
@@ -81,6 +98,12 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     registered <i class="glyphicon glyphicon-arrow-right"></i>
+=======
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Register
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
                                 </button>
                             </div>
                         </div>
@@ -90,4 +113,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d

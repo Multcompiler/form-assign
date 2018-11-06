@@ -69,8 +69,13 @@ class PushoverHandler extends SocketHandler
      * @param string|array $users             Pushover user id or array of ids the message will be sent to
      * @param string       $title             Title sent to the Pushover API
      * @param int          $level             The minimum logging level at which this handler will be triggered
+<<<<<<< HEAD
      * @param Boolean      $bubble            Whether the messages that are handled can bubble up the stack or not
      * @param Boolean      $useSSL            Whether to connect via SSL. Required when pushing messages to users that are not
+=======
+     * @param bool         $bubble            Whether the messages that are handled can bubble up the stack or not
+     * @param bool         $useSSL            Whether to connect via SSL. Required when pushing messages to users that are not
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      *                                        the pushover.net app owner. OpenSSL is required for this option.
      * @param int          $highPriorityLevel The minimum logging level at which this handler will start
      *                                        sending "high priority" requests to the Pushover API
@@ -180,6 +185,10 @@ class PushoverHandler extends SocketHandler
      */
     public function useFormattedMessage($value)
     {
+<<<<<<< HEAD
         $this->useFormattedMessage = (boolean) $value;
+=======
+        $this->useFormattedMessage = (bool) $value;
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     }
 }

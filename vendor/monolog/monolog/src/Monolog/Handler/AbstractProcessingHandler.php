@@ -11,6 +11,11 @@
 
 namespace Monolog\Handler;
 
+<<<<<<< HEAD
+=======
+use Monolog\ResettableInterface;
+
+>>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 /**
  * Base Handler class providing the Handler structure
  *
