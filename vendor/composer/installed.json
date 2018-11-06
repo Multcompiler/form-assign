@@ -1671,19 +1671,7 @@
     },
     {
         "name": "monolog/monolog",
-<<<<<<< HEAD
-        "version": "1.23.0",
-        "version_normalized": "1.23.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Seldaek/monolog.git",
-            "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
-            "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
-=======
+
         "version": "1.24.0",
         "version_normalized": "1.24.0.0",
         "source": {
@@ -1695,7 +1683,6 @@
             "type": "zip",
             "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
             "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
             "shasum": ""
         },
         "require": {
@@ -1731,11 +1718,7 @@
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
             "sentry/sentry": "Allow sending log messages to a Sentry server"
         },
-<<<<<<< HEAD
-        "time": "2017-06-19T01:22:40+00:00",
-=======
-        "time": "2018-11-05T09:00:11+00:00",
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
+		"time": "2018-11-05T09:00:11+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
