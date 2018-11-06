@@ -1717,7 +1717,9 @@
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
             "sentry/sentry": "Allow sending log messages to a Sentry server"
         },
+
         "time": "2018-11-05T09:00:11+00:00",
+		"time": "2018-11-05T09:00:11+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
