@@ -35,3 +35,6 @@ Route::get('/profile', [
 Route::get('/users/view', [
     'uses' => 'UsersController@view_users', 'as' => 'view_users'
 ]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
