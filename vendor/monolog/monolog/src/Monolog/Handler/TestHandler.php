@@ -84,16 +84,6 @@ class TestHandler extends AbstractProcessingHandler
         return isset($this->recordsByLevel[$level]);
     }
 
-<<<<<<< HEAD
-    public function hasRecord($record, $level)
-    {
-        if (is_array($record)) {
-            $record = $record['message'];
-        }
-
-        return $this->hasRecordThatPasses(function ($rec) use ($record) {
-            return $rec['message'] === $record;
-=======
     /**
      * @param string|array $record Either a message string or an array containing message and optionally context keys that will be checked against all records
      * @param int          $level  Logger::LEVEL constant value
@@ -112,7 +102,6 @@ class TestHandler extends AbstractProcessingHandler
                 return false;
             }
             return true;
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         }, $level);
     }
 

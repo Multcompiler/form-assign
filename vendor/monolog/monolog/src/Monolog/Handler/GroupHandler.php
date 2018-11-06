@@ -12,10 +12,7 @@
 namespace Monolog\Handler;
 
 use Monolog\Formatter\FormatterInterface;
-<<<<<<< HEAD
-=======
 use Monolog\ResettableInterface;
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 
 /**
  * Forwards records to multiple handlers
@@ -27,13 +24,8 @@ class GroupHandler extends AbstractHandler
     protected $handlers;
 
     /**
-<<<<<<< HEAD
-     * @param array   $handlers Array of Handlers.
-     * @param Boolean $bubble   Whether the messages that are handled can bubble up the stack or not
-=======
      * @param array $handlers Array of Handlers.
      * @param bool  $bubble   Whether the messages that are handled can bubble up the stack or not
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     public function __construct(array $handlers, $bubble = true)
     {
@@ -99,8 +91,6 @@ class GroupHandler extends AbstractHandler
         }
     }
 
-<<<<<<< HEAD
-=======
     public function reset()
     {
         parent::reset();
@@ -112,7 +102,6 @@ class GroupHandler extends AbstractHandler
         }
     }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     /**
      * {@inheritdoc}
      */

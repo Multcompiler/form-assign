@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @extends('layouts.auth')
 
 
@@ -124,7 +124,6 @@
 
 @yield('page_script')
 
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -248,4 +247,4 @@
 </script>
 </body>
 </html>
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
+

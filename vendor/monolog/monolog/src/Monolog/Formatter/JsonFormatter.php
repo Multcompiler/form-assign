@@ -12,10 +12,7 @@
 namespace Monolog\Formatter;
 
 use Exception;
-<<<<<<< HEAD
-=======
 use Monolog\Utils;
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 use Throwable;
 
 /**
@@ -142,36 +139,23 @@ class JsonFormatter extends NormalizerFormatter
      *
      * @return mixed
      */
-<<<<<<< HEAD
-    protected function normalize($data)
-    {
-=======
     protected function normalize($data, $depth = 0)
     {
         if ($depth > 9) {
             return 'Over 9 levels deep, aborting normalization';
         }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         if (is_array($data) || $data instanceof \Traversable) {
             $normalized = array();
 
             $count = 1;
             foreach ($data as $key => $value) {
-<<<<<<< HEAD
-                if ($count++ >= 1000) {
-                    $normalized['...'] = 'Over 1000 items, aborting normalization';
-                    break;
-                }
-                $normalized[$key] = $this->normalize($value);
-=======
                 if ($count++ > 1000) {
                     $normalized['...'] = 'Over 1000 items ('.count($data).' total), aborting normalization';
                     break;
                 }
 
                 $normalized[$key] = $this->normalize($value, $depth+1);
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
             }
 
             return $normalized;
@@ -196,19 +180,11 @@ class JsonFormatter extends NormalizerFormatter
     {
         // TODO 2.0 only check for Throwable
         if (!$e instanceof Exception && !$e instanceof Throwable) {
-<<<<<<< HEAD
-            throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.get_class($e));
-        }
-
-        $data = array(
-            'class' => get_class($e),
-=======
             throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.Utils::getClass($e));
         }
 
         $data = array(
             'class' => Utils::getClass($e),
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
             'message' => $e->getMessage(),
             'code' => $e->getCode(),
             'file' => $e->getFile().':'.$e->getLine(),

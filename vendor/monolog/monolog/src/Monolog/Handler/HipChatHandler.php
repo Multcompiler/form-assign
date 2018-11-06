@@ -219,8 +219,6 @@ class HipChatHandler extends SocketHandler
     protected function write(array $record)
     {
         parent::write($record);
-<<<<<<< HEAD
-=======
         $this->finalizeWrite();
     }
 
@@ -236,7 +234,6 @@ class HipChatHandler extends SocketHandler
         if (is_resource($res)) {
             @fread($res, 2048);
         }
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         $this->closeSocket();
     }
 

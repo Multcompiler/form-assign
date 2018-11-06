@@ -31,11 +31,7 @@ class PsrHandler extends AbstractHandler
     /**
      * @param LoggerInterface $logger The underlying PSR-3 compliant logger to which messages will be proxied
      * @param int             $level  The minimum logging level at which this handler will be triggered
-<<<<<<< HEAD
-     * @param Boolean         $bubble Whether the messages that are handled can bubble up the stack or not
-=======
      * @param bool            $bubble Whether the messages that are handled can bubble up the stack or not
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     public function __construct(LoggerInterface $logger, $level = Logger::DEBUG, $bubble = true)
     {

@@ -129,8 +129,6 @@ class RollbarHandler extends AbstractProcessingHandler
     {
         $this->flush();
     }
-<<<<<<< HEAD
-=======
 
     /**
      * {@inheritdoc}
@@ -143,5 +141,4 @@ class RollbarHandler extends AbstractProcessingHandler
     }
 
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 }

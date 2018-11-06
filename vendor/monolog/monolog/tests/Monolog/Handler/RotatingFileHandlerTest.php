@@ -191,8 +191,6 @@ class RotatingFileHandlerTest extends TestCase
         );
     }
 
-<<<<<<< HEAD
-=======
     /**
      * @dataProvider rotationWhenSimilarFilesExistTests
      */
@@ -227,7 +225,6 @@ class RotatingFileHandlerTest extends TestCase
         );
     }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     public function testReuseCurrentFile()
     {
         $log = __DIR__.'/Fixtures/foo-'.date('Y-m-d').'.rot';

@@ -88,8 +88,6 @@ class WhatFailureGroupHandlerTest extends TestCase
     }
 
     /**
-<<<<<<< HEAD
-=======
      * @covers Monolog\Handler\WhatFailureGroupHandler::handleBatch
      */
     public function testHandleBatchUsesProcessors()
@@ -113,7 +111,6 @@ class WhatFailureGroupHandlerTest extends TestCase
     }
 
     /**
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      * @covers Monolog\Handler\WhatFailureGroupHandler::handle
      */
     public function testHandleException()

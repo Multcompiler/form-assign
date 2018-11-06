@@ -545,8 +545,6 @@ class LoggerTest extends \PHPUnit_Framework_TestCase
             'without microseconds' => array(false, PHP_VERSION_ID >= 70100 ? 'assertNotSame' : 'assertSame'),
         );
     }
-<<<<<<< HEAD
-=======
 
     /**
      * @covers Monolog\Logger::setExceptionHandler
@@ -689,5 +687,4 @@ class LoggerTest extends \PHPUnit_Framework_TestCase
         $this->assertNotSame($uid1, $processorUid1->getUid());
         $this->assertNotSame($uid2, $processorUid2->getUid());
     }
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 }

@@ -77,8 +77,6 @@ class SocketHandlerTest extends TestCase
         $this->assertEquals(10.25, $this->handler->getWritingTimeout());
     }
 
-<<<<<<< HEAD
-=======
     public function testSetChunkSize()
     {
         $this->createHandler('localhost:1234');
@@ -86,7 +84,6 @@ class SocketHandlerTest extends TestCase
         $this->assertEquals(1025, $this->handler->getChunkSize());
     }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     public function testSetConnectionString()
     {
         $this->createHandler('tcp://localhost:9090');
@@ -131,8 +128,6 @@ class SocketHandlerTest extends TestCase
     }
 
     /**
-<<<<<<< HEAD
-=======
      * @expectedException UnexpectedValueException
      */
     public function testExceptionIsThrownIfCannotSetChunkSize()
@@ -146,7 +141,6 @@ class SocketHandlerTest extends TestCase
     }
 
     /**
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      * @expectedException RuntimeException
      */
     public function testWriteFailsOnIfFwriteReturnsFalse()
@@ -330,15 +324,12 @@ class SocketHandlerTest extends TestCase
                 ->will($this->returnValue(true));
         }
 
-<<<<<<< HEAD
-=======
         if (!in_array('streamSetChunkSize', $methods)) {
             $this->handler->expects($this->any())
                 ->method('streamSetChunkSize')
                 ->will($this->returnValue(8192));
         }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         $this->handler->setFormatter($this->getIdentityFormatter());
     }
 }

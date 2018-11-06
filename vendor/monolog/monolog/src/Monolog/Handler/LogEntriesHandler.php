@@ -31,21 +31,13 @@ class LogEntriesHandler extends SocketHandler
      *
      * @throws MissingExtensionException If SSL encryption is set to true and OpenSSL is missing
      */
-<<<<<<< HEAD
-    public function __construct($token, $useSSL = true, $level = Logger::DEBUG, $bubble = true)
-=======
     public function __construct($token, $useSSL = true, $level = Logger::DEBUG, $bubble = true, $host = 'data.logentries.com')
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     {
         if ($useSSL && !extension_loaded('openssl')) {
             throw new MissingExtensionException('The OpenSSL PHP plugin is required to use SSL encrypted connection for LogEntriesHandler');
         }
 
-<<<<<<< HEAD
-        $endpoint = $useSSL ? 'ssl://data.logentries.com:443' : 'data.logentries.com:80';
-=======
         $endpoint = $useSSL ? 'ssl://' . $host . ':443' : $host . ':80';
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         parent::__construct($endpoint, $level, $bubble);
         $this->logToken = $token;
     }

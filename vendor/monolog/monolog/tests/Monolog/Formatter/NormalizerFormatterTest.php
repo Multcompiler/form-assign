@@ -193,8 +193,6 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(@json_encode(array($foo, $bar)), $res);
     }
 
-<<<<<<< HEAD
-=======
     public function testCanNormalizeReferences()
     {
         $formatter = new NormalizerFormatter();
@@ -204,7 +202,6 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
         $formatter->format($y);
     }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     public function testIgnoresInvalidTypes()
     {
         // set up the recursion
@@ -229,8 +226,6 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(@json_encode(array($resource)), $res);
     }
 
-<<<<<<< HEAD
-=======
     public function testNormalizeHandleLargeArraysWithExactly1000Items()
     {
         $formatter = new NormalizerFormatter();
@@ -249,7 +244,6 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('...', $res['context'][0]);
     }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     public function testNormalizeHandleLargeArrays()
     {
         $formatter = new NormalizerFormatter();
@@ -264,11 +258,7 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
             'extra' => array(),
         ));
 
-<<<<<<< HEAD
-        $this->assertCount(1000, $res['context'][0]);
-=======
         $this->assertCount(1001, $res['context'][0]);
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         $this->assertEquals('Over 1000 items (2000 total), aborting normalization', $res['context'][0]['...']);
     }
 
@@ -417,8 +407,6 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
             $result['context']['exception']['trace'][0]
         );
     }
-<<<<<<< HEAD
-=======
 
     public function testExceptionTraceDoesNotLeakCallUserFuncArgs()
     {
@@ -442,7 +430,6 @@ class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
     {
         throw new \RuntimeException('Thrown');
     }
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 }
 
 class TestFooNorm
@@ -484,8 +471,6 @@ class TestToStringError
         throw new \RuntimeException('Could not convert to string');
     }
 }
-<<<<<<< HEAD
-=======
 
 class TestInfoLeak
 {
@@ -494,4 +479,3 @@ class TestInfoLeak
         return 'Sensitive information';
     }
 }
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d

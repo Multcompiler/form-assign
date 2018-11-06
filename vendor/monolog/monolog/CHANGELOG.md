@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ### 1.24.0 (2018-11-05)
 
   * Added a `ResettableInterface` in order to reset/reset/clear/flush handlers and processors
@@ -28,7 +26,6 @@
     and implement it where possible
   * Fixed display of anonymous class names
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 ### 1.23.0 (2017-06-19)
 
   * Improved SyslogUdpHandler's support for RFC5424 and added optional `$ident` argument

@@ -75,14 +75,11 @@ class SlackHandler extends SocketHandler
         return $this->slackRecord;
     }
 
-<<<<<<< HEAD
-=======
     public function getToken()
     {
         return $this->token;
     }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     /**
      * {@inheritdoc}
      *

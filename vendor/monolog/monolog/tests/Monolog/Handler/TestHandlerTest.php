@@ -54,8 +54,6 @@ class TestHandlerTest extends TestCase
         $this->assertEquals(array($record), $records);
     }
 
-<<<<<<< HEAD
-=======
     public function testHandlerAssertEmptyContext() {
         $handler = new TestHandler;
         $record  = $this->getRecord(Logger::WARNING, 'test', array());
@@ -102,7 +100,6 @@ class TestHandlerTest extends TestCase
         )));
     }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     public function methodProvider()
     {
         return array(

@@ -320,20 +320,12 @@ class SlackRecordTest extends TestCase
                 'short' => false,
             ),
             array(
-<<<<<<< HEAD
-                'title' => 'tags',
-=======
                 'title' => 'Tags',
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
                 'value' => sprintf('```%s```', json_encode($extra['tags'])),
                 'short' => false
             ),
             array(
-<<<<<<< HEAD
-                'title' => 'test',
-=======
                 'title' => 'Test',
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
                 'value' => $context['test'],
                 'short' => false
             )
@@ -361,8 +353,6 @@ class SlackRecordTest extends TestCase
         $this->assertSame($record['datetime']->getTimestamp(), $attachment['ts']);
     }
 
-<<<<<<< HEAD
-=======
     public function testContextHasException()
     {
         $record = $this->getRecord(Logger::CRITICAL, 'This is a critical message.', array('exception' => new \Exception()));
@@ -371,7 +361,6 @@ class SlackRecordTest extends TestCase
         $this->assertInternalType('string', $data['attachments'][0]['fields'][1]['value']);
     }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     public function testExcludeExtraAndContextFields()
     {
         $record = $this->getRecord(
@@ -387,20 +376,12 @@ class SlackRecordTest extends TestCase
 
         $expected = array(
             array(
-<<<<<<< HEAD
-                'title' => 'info',
-=======
                 'title' => 'Info',
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
                 'value' => sprintf('```%s```', json_encode(array('author' => 'Jordi'), $this->jsonPrettyPrintFlag)),
                 'short' => false
             ),
             array(
-<<<<<<< HEAD
-                'title' => 'tags',
-=======
                 'title' => 'Tags',
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
                 'value' => sprintf('```%s```', json_encode(array('web'))),
                 'short' => false
             ),

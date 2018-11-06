@@ -43,19 +43,11 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
     protected function write(array $record)
     {
         // Accumulate records
-<<<<<<< HEAD
-        self::$records[] = $record;
-
-        // Register shutdown handler if not already done
-        if (!self::$initialized) {
-            self::$initialized = true;
-=======
         static::$records[] = $record;
 
         // Register shutdown handler if not already done
         if (!static::$initialized) {
             static::$initialized = true;
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
             $this->registerShutdownFunction();
         }
     }
@@ -66,33 +58,11 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
      */
     public static function send()
     {
-<<<<<<< HEAD
-        $format = self::getResponseFormat();
-=======
         $format = static::getResponseFormat();
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         if ($format === 'unknown') {
             return;
         }
 
-<<<<<<< HEAD
-        if (count(self::$records)) {
-            if ($format === 'html') {
-                self::writeOutput('<script>' . self::generateScript() . '</script>');
-            } elseif ($format === 'js') {
-                self::writeOutput(self::generateScript());
-            }
-            self::reset();
-        }
-    }
-
-    /**
-     * Forget all logged records
-     */
-    public static function reset()
-    {
-        self::$records = array();
-=======
         if (count(static::$records)) {
             if ($format === 'html') {
                 static::writeOutput('<script>' . static::generateScript() . '</script>');
@@ -119,7 +89,6 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
     public static function resetStatic()
     {
         static::$records = array();
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     }
 
     /**
@@ -174,20 +143,6 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
     private static function generateScript()
     {
         $script = array();
-<<<<<<< HEAD
-        foreach (self::$records as $record) {
-            $context = self::dump('Context', $record['context']);
-            $extra = self::dump('Extra', $record['extra']);
-
-            if (empty($context) && empty($extra)) {
-                $script[] = self::call_array('log', self::handleStyles($record['formatted']));
-            } else {
-                $script = array_merge($script,
-                    array(self::call_array('groupCollapsed', self::handleStyles($record['formatted']))),
-                    $context,
-                    $extra,
-                    array(self::call('groupEnd'))
-=======
         foreach (static::$records as $record) {
             $context = static::dump('Context', $record['context']);
             $extra = static::dump('Extra', $record['extra']);
@@ -200,7 +155,6 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
                     $context,
                     $extra,
                     array(static::call('groupEnd'))
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
                 );
             }
         }
@@ -210,31 +164,19 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
 
     private static function handleStyles($formatted)
     {
-<<<<<<< HEAD
-        $args = array(self::quote('font-weight: normal'));
-=======
         $args = array(static::quote('font-weight: normal'));
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         $format = '%c' . $formatted;
         preg_match_all('/\[\[(.*?)\]\]\{([^}]*)\}/s', $format, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
 
         foreach (array_reverse($matches) as $match) {
-<<<<<<< HEAD
-            $args[] = self::quote(self::handleCustomStyles($match[2][0], $match[1][0]));
-=======
             $args[] = static::quote(static::handleCustomStyles($match[2][0], $match[1][0]));
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
             $args[] = '"font-weight: normal"';
 
             $pos = $match[0][1];
             $format = substr($format, 0, $pos) . '%c' . $match[1][0] . '%c' . substr($format, $pos + strlen($match[0][0]));
         }
 
-<<<<<<< HEAD
-        array_unshift($args, self::quote($format));
-=======
         array_unshift($args, static::quote($format));
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 
         return $args;
     }
@@ -266,15 +208,6 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
         if (empty($dict)) {
             return $script;
         }
-<<<<<<< HEAD
-        $script[] = self::call('log', self::quote('%c%s'), self::quote('font-weight: bold'), self::quote($title));
-        foreach ($dict as $key => $value) {
-            $value = json_encode($value);
-            if (empty($value)) {
-                $value = self::quote('');
-            }
-            $script[] = self::call('log', self::quote('%s: %o'), self::quote($key), $value);
-=======
         $script[] = static::call('log', static::quote('%c%s'), static::quote('font-weight: bold'), static::quote($title));
         foreach ($dict as $key => $value) {
             $value = json_encode($value);
@@ -282,7 +215,6 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
                 $value = static::quote('');
             }
             $script[] = static::call('log', static::quote('%s: %o'), static::quote($key), $value);
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         }
 
         return $script;
@@ -298,11 +230,7 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
         $args = func_get_args();
         $method = array_shift($args);
 
-<<<<<<< HEAD
-        return self::call_array($method, $args);
-=======
         return static::call_array($method, $args);
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     }
 
     private static function call_array($method, array $args)

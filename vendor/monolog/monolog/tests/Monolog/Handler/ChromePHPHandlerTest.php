@@ -21,11 +21,7 @@ class ChromePHPHandlerTest extends TestCase
 {
     protected function setUp()
     {
-<<<<<<< HEAD
-        TestChromePHPHandler::reset();
-=======
         TestChromePHPHandler::resetStatic();
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
         $_SERVER['HTTP_USER_AGENT'] = 'Monolog Test; Chrome/1.0';
     }
 
@@ -140,11 +136,7 @@ class TestChromePHPHandler extends ChromePHPHandler
 {
     protected $headers = array();
 
-<<<<<<< HEAD
-    public static function reset()
-=======
     public static function resetStatic()
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     {
         self::$initialized = false;
         self::$overflowed = false;

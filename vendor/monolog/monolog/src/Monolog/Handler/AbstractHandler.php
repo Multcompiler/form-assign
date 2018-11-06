@@ -11,27 +11,17 @@
 
 namespace Monolog\Handler;
 
-<<<<<<< HEAD
-use Monolog\Logger;
-use Monolog\Formatter\FormatterInterface;
-use Monolog\Formatter\LineFormatter;
-=======
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Logger;
 use Monolog\ResettableInterface;
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 
 /**
  * Base Handler class providing the Handler structure
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
-<<<<<<< HEAD
-abstract class AbstractHandler implements HandlerInterface
-=======
 abstract class AbstractHandler implements HandlerInterface, ResettableInterface
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 {
     protected $level = Logger::DEBUG;
     protected $bubble = true;
@@ -43,13 +33,8 @@ abstract class AbstractHandler implements HandlerInterface, ResettableInterface
     protected $processors = array();
 
     /**
-<<<<<<< HEAD
-     * @param int     $level  The minimum logging level at which this handler will be triggered
-     * @param Boolean $bubble Whether the messages that are handled can bubble up the stack or not
-=======
      * @param int  $level  The minimum logging level at which this handler will be triggered
      * @param bool $bubble Whether the messages that are handled can bubble up the stack or not
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     public function __construct($level = Logger::DEBUG, $bubble = true)
     {
@@ -157,13 +142,8 @@ abstract class AbstractHandler implements HandlerInterface, ResettableInterface
     /**
      * Sets the bubbling behavior.
      *
-<<<<<<< HEAD
-     * @param  Boolean $bubble true means that this handler allows bubbling.
-     *                         false means that bubbling is not permitted.
-=======
      * @param  bool $bubble true means that this handler allows bubbling.
      *                      false means that bubbling is not permitted.
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      * @return self
      */
     public function setBubble($bubble)
@@ -176,13 +156,8 @@ abstract class AbstractHandler implements HandlerInterface, ResettableInterface
     /**
      * Gets the bubbling behavior.
      *
-<<<<<<< HEAD
-     * @return Boolean true means that this handler allows bubbling.
-     *                 false means that bubbling is not permitted.
-=======
      * @return bool true means that this handler allows bubbling.
      *              false means that bubbling is not permitted.
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     public function getBubble()
     {
@@ -200,8 +175,6 @@ abstract class AbstractHandler implements HandlerInterface, ResettableInterface
         }
     }
 
-<<<<<<< HEAD
-=======
     public function reset()
     {
         foreach ($this->processors as $processor) {
@@ -211,7 +184,6 @@ abstract class AbstractHandler implements HandlerInterface, ResettableInterface
         }
     }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     /**
      * Gets the default formatter.
      *

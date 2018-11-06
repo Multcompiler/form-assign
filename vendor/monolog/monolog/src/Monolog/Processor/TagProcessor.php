@@ -16,11 +16,7 @@ namespace Monolog\Processor;
  *
  * @author Martijn Riemers
  */
-<<<<<<< HEAD
-class TagProcessor
-=======
 class TagProcessor implements ProcessorInterface
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 {
     private $tags;
 

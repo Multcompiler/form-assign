@@ -27,25 +27,16 @@ class SocketHandler extends AbstractProcessingHandler
     private $timeout = 0;
     private $writingTimeout = 10;
     private $lastSentBytes = null;
-<<<<<<< HEAD
-=======
     private $chunkSize = null;
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     private $persistent = false;
     private $errno;
     private $errstr;
     private $lastWritingAt;
 
     /**
-<<<<<<< HEAD
-     * @param string  $connectionString Socket connection string
-     * @param int     $level            The minimum logging level at which this handler will be triggered
-     * @param Boolean $bubble           Whether the messages that are handled can bubble up the stack or not
-=======
      * @param string $connectionString Socket connection string
      * @param int    $level            The minimum logging level at which this handler will be triggered
      * @param bool   $bubble           Whether the messages that are handled can bubble up the stack or not
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     public function __construct($connectionString, $level = Logger::DEBUG, $bubble = true)
     {
@@ -97,11 +88,7 @@ class SocketHandler extends AbstractProcessingHandler
      */
     public function setPersistent($persistent)
     {
-<<<<<<< HEAD
-        $this->persistent = (boolean) $persistent;
-=======
         $this->persistent = (bool) $persistent;
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     }
 
     /**
@@ -142,8 +129,6 @@ class SocketHandler extends AbstractProcessingHandler
     }
 
     /**
-<<<<<<< HEAD
-=======
      * Set chunk size. Only has effect during connection in the writing cycle.
      *
      * @param float $bytes
@@ -154,7 +139,6 @@ class SocketHandler extends AbstractProcessingHandler
     }
 
     /**
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      * Get current connection string
      *
      * @return string
@@ -205,8 +189,6 @@ class SocketHandler extends AbstractProcessingHandler
     }
 
     /**
-<<<<<<< HEAD
-=======
      * Get current chunk size
      *
      * @return float
@@ -217,7 +199,6 @@ class SocketHandler extends AbstractProcessingHandler
     }
 
     /**
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      * Check to see if the socket is currently available.
      *
      * UDP might appear to be connected but might fail when writing.  See http://php.net/fsockopen for details.
@@ -261,8 +242,6 @@ class SocketHandler extends AbstractProcessingHandler
 
     /**
      * Wrapper to allow mocking
-<<<<<<< HEAD
-=======
      *
      * @see http://php.net/manual/en/function.stream-set-chunk-size.php
      */
@@ -273,7 +252,6 @@ class SocketHandler extends AbstractProcessingHandler
 
     /**
      * Wrapper to allow mocking
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     protected function fwrite($data)
     {
@@ -321,10 +299,7 @@ class SocketHandler extends AbstractProcessingHandler
     {
         $this->createSocketResource();
         $this->setSocketTimeout();
-<<<<<<< HEAD
-=======
         $this->setStreamChunkSize();
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     }
 
     private function createSocketResource()
@@ -347,8 +322,6 @@ class SocketHandler extends AbstractProcessingHandler
         }
     }
 
-<<<<<<< HEAD
-=======
     private function setStreamChunkSize()
     {
         if ($this->chunkSize && !$this->streamSetChunkSize()) {
@@ -356,7 +329,6 @@ class SocketHandler extends AbstractProcessingHandler
         }
     }
 
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
     private function writeToSocket($data)
     {
         $length = strlen($data);

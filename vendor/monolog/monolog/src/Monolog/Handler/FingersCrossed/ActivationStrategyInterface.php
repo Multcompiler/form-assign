@@ -22,11 +22,7 @@ interface ActivationStrategyInterface
      * Returns whether the given record activates the handler.
      *
      * @param  array   $record
-<<<<<<< HEAD
-     * @return Boolean
-=======
      * @return bool
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
      */
     public function isHandlerActivated(array $record);
 }

@@ -180,8 +180,6 @@ class JsonFormatterTest extends TestCase
             '}';
         return $formattedException;
     }
-<<<<<<< HEAD
-=======
 
     public function testNormalizeHandleLargeArraysWithExactly1000Items()
     {
@@ -218,5 +216,4 @@ class JsonFormatterTest extends TestCase
         $this->assertCount(1001, $res['context'][0]);
         $this->assertEquals('Over 1000 items (2000 total), aborting normalization', $res['context'][0]['...']);
     }
->>>>>>> f5419e6ecc604596cfea4376a846e046e055eb0d
 }
