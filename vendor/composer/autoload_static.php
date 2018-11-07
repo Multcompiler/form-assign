@@ -428,6 +428,7 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
     );
 
     public static $classMap = array (
+        'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Commands\\CalculateActiveUser' => __DIR__ . '/../..' . '/app/Console/Commands/CalculateActiveUser.php',
         'App\\Console\\Commands\\SyncUserActivedAt' => __DIR__ . '/../..' . '/app/Console/Commands/SyncUserActivedAt.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -469,6 +470,7 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'App\\Policies\\ReplyPolicy' => __DIR__ . '/../..' . '/app/Policies/ReplyPolicy.php',
         'App\\Policies\\TopicPolicy' => __DIR__ . '/../..' . '/app/Policies/TopicPolicy.php',
         'App\\Policies\\UserPolicy' => __DIR__ . '/../..' . '/app/Policies/UserPolicy.php',
+        'App\\Post' => __DIR__ . '/../..' . '/app/Post.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

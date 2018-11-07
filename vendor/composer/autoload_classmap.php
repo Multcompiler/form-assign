@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Commands\\CalculateActiveUser' => $baseDir . '/app/Console/Commands/CalculateActiveUser.php',
     'App\\Console\\Commands\\SyncUserActivedAt' => $baseDir . '/app/Console/Commands/SyncUserActivedAt.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -47,6 +48,7 @@ return array(
     'App\\Policies\\ReplyPolicy' => $baseDir . '/app/Policies/ReplyPolicy.php',
     'App\\Policies\\TopicPolicy' => $baseDir . '/app/Policies/TopicPolicy.php',
     'App\\Policies\\UserPolicy' => $baseDir . '/app/Policies/UserPolicy.php',
+    'App\\Post' => $baseDir . '/app/Post.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

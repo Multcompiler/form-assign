@@ -50,7 +50,7 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="byline">
-                                                    <span>13 Comments</span>
+                                                    <span>Category: Sports, 13 Comments</span>
                                                 </div>
                                             </div>
                                             <div class="col-xs-6 text-right">
@@ -77,7 +77,7 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="byline">
-                                                    <span>7 Comments</span>
+                                                    <span>Category: Lifestyle, 7 Comments</span>
                                                 </div>
                                             </div>
                                             <div class="col-xs-6 text-right">
