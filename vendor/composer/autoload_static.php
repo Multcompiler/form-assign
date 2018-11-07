@@ -13,10 +13,10 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
-        '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
+        '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
@@ -25,7 +25,6 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         '5e8fe2a5ffaded85af682684fe3bbf5a' => __DIR__ . '/..' . '/mews/captcha/src/helpers.php',
         'cb61d74ad51d00867155534456b38b23' => __DIR__ . '/..' . '/mews/purifier/src/helpers.php',
         'f960e77410032f236cef8c56617b313e' => __DIR__ . '/..' . '/overtrue/laravel-lang/src/helpers.php',
-        '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -48,6 +47,7 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         ),
         'T' => 
         array (
+            'Traitor\\' => 8,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
         ),
@@ -68,7 +68,6 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
-            'Spatie\\Permission\\' => 18,
         ),
         'R' => 
         array (
@@ -99,6 +98,7 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'Laratrust\\' => 10,
         ),
         'J' => 
         array (
@@ -171,6 +171,10 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         array (
             0 => __DIR__ . '/..' . '/viacreative/sudo-su/src',
         ),
+        'Traitor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kkszymanowski/traitor/src',
+        ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
             0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
@@ -239,10 +243,6 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
-        'Spatie\\Permission\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/spatie/laravel-permission/src',
-        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -302,6 +302,10 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'Laratrust\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/santigarcor/laratrust/src',
         ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
@@ -411,13 +415,6 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
                 0 => __DIR__ . '/..' . '/ezyang/htmlpurifier/library',
             ),
         ),
-        'F' => 
-        array (
-            'Frozennode\\Administrator' => 
-            array (
-                0 => __DIR__ . '/..' . '/summerblue/administrator/src',
-            ),
-        ),
         'D' => 
         array (
             'Doctrine\\Common\\Lexer\\' => 
@@ -466,6 +463,7 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'App\\Observers\\ReplyObserver' => __DIR__ . '/../..' . '/app/Observers/ReplyObserver.php',
         'App\\Observers\\TopicObserver' => __DIR__ . '/../..' . '/app/Observers/TopicObserver.php',
         'App\\Observers\\UserObserver' => __DIR__ . '/../..' . '/app/Observers/UserObserver.php',
+        'App\\Permission' => __DIR__ . '/../..' . '/app/Permission.php',
         'App\\Policies\\Policy' => __DIR__ . '/../..' . '/app/Policies/Policy.php',
         'App\\Policies\\ReplyPolicy' => __DIR__ . '/../..' . '/app/Policies/ReplyPolicy.php',
         'App\\Policies\\TopicPolicy' => __DIR__ . '/../..' . '/app/Policies/TopicPolicy.php',
@@ -476,6 +474,7 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Role' => __DIR__ . '/../..' . '/app/Role.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\UserProfile' => __DIR__ . '/../..' . '/app/UserProfile.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
@@ -1056,48 +1055,6 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
-        'Frozennode\\Administrator\\Actions\\Action' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Actions/Action.php',
-        'Frozennode\\Administrator\\Actions\\Factory' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Actions/Factory.php',
-        'Frozennode\\Administrator\\AdminController' => __DIR__ . '/..' . '/summerblue/administrator/src/controllers/AdminController.php',
-        'Frozennode\\Administrator\\AdministratorServiceProvider' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/AdministratorServiceProvider.php',
-        'Frozennode\\Administrator\\Config\\Config' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Config/Config.php',
-        'Frozennode\\Administrator\\Config\\ConfigInterface' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Config/ConfigInterface.php',
-        'Frozennode\\Administrator\\Config\\Factory' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Config/Factory.php',
-        'Frozennode\\Administrator\\Config\\Model\\Config' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Config/Model/Config.php',
-        'Frozennode\\Administrator\\Config\\Settings\\Config' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Config/Settings/Config.php',
-        'Frozennode\\Administrator\\DataTable\\Columns\\Column' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/DataTable/Columns/Column.php',
-        'Frozennode\\Administrator\\DataTable\\Columns\\Factory' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/DataTable/Columns/Factory.php',
-        'Frozennode\\Administrator\\DataTable\\Columns\\Relationships\\BelongsTo' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/DataTable/Columns/Relationships/BelongsTo.php',
-        'Frozennode\\Administrator\\DataTable\\Columns\\Relationships\\BelongsToMany' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/DataTable/Columns/Relationships/BelongsToMany.php',
-        'Frozennode\\Administrator\\DataTable\\Columns\\Relationships\\HasOneOrMany' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/DataTable/Columns/Relationships/HasOneOrMany.php',
-        'Frozennode\\Administrator\\DataTable\\Columns\\Relationships\\Relationship' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/DataTable/Columns/Relationships/Relationship.php',
-        'Frozennode\\Administrator\\DataTable\\DataTable' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/DataTable/DataTable.php',
-        'Frozennode\\Administrator\\Fields\\Boolean' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Boolean.php',
-        'Frozennode\\Administrator\\Fields\\Color' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Color.php',
-        'Frozennode\\Administrator\\Fields\\Enum' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Enum.php',
-        'Frozennode\\Administrator\\Fields\\Factory' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Factory.php',
-        'Frozennode\\Administrator\\Fields\\Field' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Field.php',
-        'Frozennode\\Administrator\\Fields\\File' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/File.php',
-        'Frozennode\\Administrator\\Fields\\Image' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Image.php',
-        'Frozennode\\Administrator\\Fields\\Key' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Key.php',
-        'Frozennode\\Administrator\\Fields\\Number' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Number.php',
-        'Frozennode\\Administrator\\Fields\\Password' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Password.php',
-        'Frozennode\\Administrator\\Fields\\Relationships\\BelongsTo' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Relationships/BelongsTo.php',
-        'Frozennode\\Administrator\\Fields\\Relationships\\BelongsToMany' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Relationships/BelongsToMany.php',
-        'Frozennode\\Administrator\\Fields\\Relationships\\HasMany' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Relationships/HasMany.php',
-        'Frozennode\\Administrator\\Fields\\Relationships\\HasOne' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Relationships/HasOne.php',
-        'Frozennode\\Administrator\\Fields\\Relationships\\HasOneOrMany' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Relationships/HasOneOrMany.php',
-        'Frozennode\\Administrator\\Fields\\Relationships\\Relationship' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Relationships/Relationship.php',
-        'Frozennode\\Administrator\\Fields\\Text' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Text.php',
-        'Frozennode\\Administrator\\Fields\\Time' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Fields/Time.php',
-        'Frozennode\\Administrator\\Http\\Middleware\\PostValidate' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Http/Middleware/PostValidate.php',
-        'Frozennode\\Administrator\\Http\\Middleware\\ValidateAdmin' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Http/Middleware/ValidateAdmin.php',
-        'Frozennode\\Administrator\\Http\\Middleware\\ValidateModel' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Http/Middleware/ValidateModel.php',
-        'Frozennode\\Administrator\\Http\\Middleware\\ValidateSettings' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Http/Middleware/ValidateSettings.php',
-        'Frozennode\\Administrator\\Includes\\Multup' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Includes/Multup.php',
-        'Frozennode\\Administrator\\Includes\\Resize' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Includes/Resize.php',
-        'Frozennode\\Administrator\\Menu' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Menu.php',
-        'Frozennode\\Administrator\\Validator' => __DIR__ . '/..' . '/summerblue/administrator/src/Frozennode/Administrator/Validator.php',
         'GuzzleHttp\\Client' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Client.php',
         'GuzzleHttp\\ClientInterface' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/ClientInterface.php',
         'GuzzleHttp\\Cookie\\CookieJar' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Cookie/CookieJar.php',
@@ -2375,6 +2332,39 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
+        'LaratrustSeeder' => __DIR__ . '/../..' . '/database/seeds/LaratrustSeeder.php',
+        'Laratrust\\Commands\\AddLaratrustUserTraitUseCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/AddLaratrustUserTraitUseCommand.php',
+        'Laratrust\\Commands\\MakePermissionCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/MakePermissionCommand.php',
+        'Laratrust\\Commands\\MakeRoleCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/MakeRoleCommand.php',
+        'Laratrust\\Commands\\MakeSeederCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/MakeSeederCommand.php',
+        'Laratrust\\Commands\\MakeTeamCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/MakeTeamCommand.php',
+        'Laratrust\\Commands\\MigrationCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/MigrationCommand.php',
+        'Laratrust\\Commands\\SetupCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/SetupCommand.php',
+        'Laratrust\\Commands\\SetupTeamsCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/SetupTeamsCommand.php',
+        'Laratrust\\Commands\\UpgradeCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/UpgradeCommand.php',
+        'Laratrust\\Contracts\\LaratrustPermissionInterface' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Contracts/LaratrustPermissionInterface.php',
+        'Laratrust\\Contracts\\LaratrustRoleInterface' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Contracts/LaratrustRoleInterface.php',
+        'Laratrust\\Contracts\\LaratrustTeamInterface' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Contracts/LaratrustTeamInterface.php',
+        'Laratrust\\Contracts\\LaratrustUserInterface' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Contracts/LaratrustUserInterface.php',
+        'Laratrust\\Contracts\\Ownable' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Contracts/Ownable.php',
+        'Laratrust\\Helper' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Helper.php',
+        'Laratrust\\Laratrust' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Laratrust.php',
+        'Laratrust\\LaratrustFacade' => __DIR__ . '/..' . '/santigarcor/laratrust/src/LaratrustFacade.php',
+        'Laratrust\\LaratrustRegistersBladeDirectives' => __DIR__ . '/..' . '/santigarcor/laratrust/src/LaratrustRegistersBladeDirectives.php',
+        'Laratrust\\LaratrustServiceProvider' => __DIR__ . '/..' . '/santigarcor/laratrust/src/LaratrustServiceProvider.php',
+        'Laratrust\\Middleware\\LaratrustAbility' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Middleware/LaratrustAbility.php',
+        'Laratrust\\Middleware\\LaratrustMiddleware' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Middleware/LaratrustMiddleware.php',
+        'Laratrust\\Middleware\\LaratrustPermission' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Middleware/LaratrustPermission.php',
+        'Laratrust\\Middleware\\LaratrustRole' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Middleware/LaratrustRole.php',
+        'Laratrust\\Models\\LaratrustPermission' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Models/LaratrustPermission.php',
+        'Laratrust\\Models\\LaratrustRole' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Models/LaratrustRole.php',
+        'Laratrust\\Models\\LaratrustTeam' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Models/LaratrustTeam.php',
+        'Laratrust\\Traits\\LaratrustDynamicUserRelationsCalls' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Traits/LaratrustDynamicUserRelationsCalls.php',
+        'Laratrust\\Traits\\LaratrustHasEvents' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Traits/LaratrustHasEvents.php',
+        'Laratrust\\Traits\\LaratrustPermissionTrait' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Traits/LaratrustPermissionTrait.php',
+        'Laratrust\\Traits\\LaratrustRoleTrait' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Traits/LaratrustRoleTrait.php',
+        'Laratrust\\Traits\\LaratrustTeamTrait' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Traits/LaratrustTeamTrait.php',
+        'Laratrust\\Traits\\LaratrustUserTrait' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Traits/LaratrustUserTrait.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -3935,27 +3925,6 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
-        'Spatie\\Permission\\Commands\\CreatePermission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreatePermission.php',
-        'Spatie\\Permission\\Commands\\CreateRole' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreateRole.php',
-        'Spatie\\Permission\\Contracts\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Permission.php',
-        'Spatie\\Permission\\Contracts\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Role.php',
-        'Spatie\\Permission\\Exceptions\\GuardDoesNotMatch' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/GuardDoesNotMatch.php',
-        'Spatie\\Permission\\Exceptions\\PermissionAlreadyExists' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/PermissionAlreadyExists.php',
-        'Spatie\\Permission\\Exceptions\\PermissionDoesNotExist' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/PermissionDoesNotExist.php',
-        'Spatie\\Permission\\Exceptions\\RoleAlreadyExists' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/RoleAlreadyExists.php',
-        'Spatie\\Permission\\Exceptions\\RoleDoesNotExist' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/RoleDoesNotExist.php',
-        'Spatie\\Permission\\Exceptions\\UnauthorizedException' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/UnauthorizedException.php',
-        'Spatie\\Permission\\Guard' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Guard.php',
-        'Spatie\\Permission\\Middlewares\\PermissionMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middlewares/PermissionMiddleware.php',
-        'Spatie\\Permission\\Middlewares\\RoleMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middlewares/RoleMiddleware.php',
-        'Spatie\\Permission\\Middlewares\\RoleOrPermissionMiddleware' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Middlewares/RoleOrPermissionMiddleware.php',
-        'Spatie\\Permission\\Models\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Permission.php',
-        'Spatie\\Permission\\Models\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Role.php',
-        'Spatie\\Permission\\PermissionRegistrar' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionRegistrar.php',
-        'Spatie\\Permission\\PermissionServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionServiceProvider.php',
-        'Spatie\\Permission\\Traits\\HasPermissions' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/HasPermissions.php',
-        'Spatie\\Permission\\Traits\\HasRoles' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/HasRoles.php',
-        'Spatie\\Permission\\Traits\\RefreshesPermissionCache' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/RefreshesPermissionCache.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
@@ -4537,6 +4506,10 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
         'TopicsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/TopicsTableSeeder.php',
+        'Traitor\\Handlers\\AbstractTreeHandler' => __DIR__ . '/..' . '/kkszymanowski/traitor/src/Handlers/AbstractTreeHandler.php',
+        'Traitor\\Handlers\\Handler' => __DIR__ . '/..' . '/kkszymanowski/traitor/src/Handlers/Handler.php',
+        'Traitor\\TraitUseAdder' => __DIR__ . '/..' . '/kkszymanowski/traitor/src/TraitUseAdder.php',
+        'Traitor\\Traitor' => __DIR__ . '/..' . '/kkszymanowski/traitor/src/Traitor.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
         'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
         'VIACreative\\SudoSu\\Controllers\\SudoSuController' => __DIR__ . '/..' . '/viacreative/sudo-su/src/Controllers/SudoSuController.php',
