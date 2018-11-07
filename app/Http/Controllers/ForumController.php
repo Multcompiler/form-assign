@@ -24,7 +24,7 @@ class ForumController extends Controller
                  'title' => $post->title,
                  'post_category' => PostCategory::where("id",$post->category_id)->pluck("category_name")->first(),
                  'comments_count' => Comment::where("id",$post->id)->count(),
-                 'body' =>  $post->body,
+                 'body' =>  substr($post->body , 0, 150),
                  'posted_by' => UserProfile::where("id",$post->user_id)->pluck("firstname")->first()." ".UserProfile::where("id",$post->user_id)->pluck("lastname")->first(),
              ];
          }
