@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Post;
 use App\PostCategory;
+use App\UserProfile;
 use Illuminate\Http\Request;
 
 class ForumController extends Controller
@@ -13,7 +15,20 @@ class ForumController extends Controller
         return view('forum.view_all');
     }
      public function forum_posts_json(){
-        return view('forum.view_all');
+         $data_collection = array();
+         $posts = Post::all();
+
+         foreach ($posts as $post){
+             $data_collection[] = [
+                 'id' => $post->id,
+                 'title' => $post->title,
+                 'post_category' => PostCategory::where("id",$post->category_id)->pluck("category_name")->first(),
+                 'comments_count' => Comment::where("id",$post->id)->count(),
+                 'body' =>  $post->body,
+                 'posted_by' => UserProfile::where("id",$post->user_id)->pluck("firstname")->first()." ".UserProfile::where("id",$post->user_id)->pluck("lastname")->first(),
+             ];
+         }
+        return response()->json(['data' => $data_collection]);
     }
 
     public function add_post(){

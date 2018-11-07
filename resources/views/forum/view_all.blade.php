@@ -52,65 +52,8 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    <div class="dashboard-widget-content">
+                    <div class="dashboard-widget-content" id="post_data">
 
-                        <ul class="list-unstyled timeline widget">
-
-                            <li>
-                                <div class="block">
-                                    <div class="block_content">
-                                        <h2 class="title">
-                                            <a href="{{route('view_single_post')}}">Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
-                                        </h2>
-                                        <div class="byline">
-                                           Posted by <a>Jane Smith</a>
-                                        </div>
-                                        <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. Film festivals used to be do-or-die moments,They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                <div class="byline">
-                                                    <span>Category: Sports, 13 Comments</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 text-right">
-                                                <div class="byline">
-                                                   <span class="tabs-right">13 hours ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="block">
-                                    <div class="block_content">
-                                        <h2 class="title">
-                                            <a href="{{route('view_single_post')}}">Film festivals used to be do-or-die moments?</a>
-                                        </h2>
-                                        <div class="byline">
-                                            Posted by <a>John Data</a>
-                                        </div>
-                                        <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. Film festivals used to be do-or-die moments,They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                <div class="byline">
-                                                    <span>Category: Lifestyle, 7 Comments</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 text-right">
-                                                <div class="byline">
-                                                    <span class="tabs-right">2 days ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -180,4 +123,76 @@
 @endsection
 
 
-@yield('page_script')
+@section('page_script')
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '/get/all/post',
+                type: 'GET',
+
+                success: function (data) {
+
+                    var max_size=data.data.length;
+                    $('.search_count').html("Results Found: "+max_size);
+                    var sta = 0;
+                    var elements_per_page = 10;
+                    var limit = elements_per_page;
+                    goFun(sta,limit);
+                    var  posts_list = '';
+                    function goFun(sta,limit) {
+                        posts_list += '<ul class="list-unstyled timeline widget">';
+                        $.each(data.data, function( key, value ) {
+                            posts_list += '<li>'+
+                                '<div class="block">'+
+                                '<div class="block_content">'+
+                                 '<h2 class="title">'+
+                                   '<a href="/forum/post/'+value['id']+'">'+value['title']+'</a>'+
+                                '</h2>'+
+                                '<div class="byline">'+
+                                'Posted by <a>'+value['posted_by']+'</a>'+
+                                '</div>'+
+                                '<p class="excerpt">'+value['body']+
+                                '</p>'+
+                                '<div class="row">'+
+                                '<div class="col-xs-6">'+
+                                '<div class="byline">'+
+                                '<span>Category: '+value['post_category']+', '+value['comments_count']+' Comments</span>'+
+                                '</div>'+
+                                '</div>'+
+                                '<div class="col-xs-6 text-right">'+
+                                '<div class="byline">'+
+                                '<span class="tabs-right">2 days ago</span>'+
+                                '</div>'+
+                                '</div>'+
+                                '</div>'+
+
+                                '</div>'+
+                                '</div>'+
+                                '</li>'; //showing only the first error.
+                        });
+                        posts_list += '</ul>';
+
+
+                        $("#post_data").append(posts_list);
+
+                    }
+                    $('#nextValue').click(function(){
+
+                        var next = limit;
+                        if(max_size>=next) {
+                            limit = limit+elements_per_page;
+                            goFun(next,limit);
+                        }
+                    });
+                    $('#PreeValue').click(function(){
+                        var pre = limit-(2*elements_per_page);
+                        if(pre>=0) {
+                            limit = limit-elements_per_page;
+                            goFun(pre,limit);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+@endsection
