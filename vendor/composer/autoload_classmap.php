@@ -53,6 +53,7 @@ return array(
     'App\\Policies\\TopicPolicy' => $baseDir . '/app/Policies/TopicPolicy.php',
     'App\\Policies\\UserPolicy' => $baseDir . '/app/Policies/UserPolicy.php',
     'App\\Post' => $baseDir . '/app/Post.php',
+    'App\\PostCategory' => $baseDir . '/app/PostCategory.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

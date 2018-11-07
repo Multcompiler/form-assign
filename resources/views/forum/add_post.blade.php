@@ -10,6 +10,19 @@
 @section('main')
 
     <div class="row">
+        <div class="col-md-12">
+            @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-ban"></i> Errors!</h4>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
@@ -33,16 +46,17 @@
                 </div>
                 <div class="x_content">
                     <br />
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
+                    <form  method="post" action="{{route('save_forum_post')}}" data-parsley-validate class="form-horizontal form-label-left">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">Category <span class="required">*</span>
                             </label>
                             <div class="col-md-7 col-sm-7 col-xs-12">
-                                <select class="form-control col-md-7 col-xs-12">
+                                <select name="category_id" class="form-control col-md-7 col-xs-12">
                                     <option value=""> -- Default -- </option>
-                                    <option value=""> Sports </option>
-                                    <option value=""> Lifestyle </option>
+                                    @foreach($post_categories as $post_category)
+                                        <option value="{{$post_category->id}}"> {{ucfirst($post_category->category_name)}} </option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -50,88 +64,18 @@
                             <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">Title <span class="required">*</span>
                             </label>
                             <div class="col-md-7 col-sm-7 col-xs-12">
-                                <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="first-name" name="title" required="required" class="form-control col-md-7 col-xs-12" placeholder="Title">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-2 col-sm-2 col-xs-12" for="last-name">Post Body <span class="required">*</span>
                             </label>
-                            <div class="btn-toolbar editor" data-role="editor-toolbar" data-target="#editor-one">
-                                <div class="btn-group">
-                                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                    </ul>
-                                </div>
-
-                                <div class="btn-group">
-                                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a data-edit="fontSize 5">
-                                                <p style="font-size:17px">Huge</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a data-edit="fontSize 3">
-                                                <p style="font-size:14px">Normal</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a data-edit="fontSize 1">
-                                                <p style="font-size:11px">Small</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="btn-group">
-                                    <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
-                                    <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
-                                    <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
-                                    <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
-                                </div>
-
-                                <div class="btn-group">
-                                    <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
-                                    <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
-                                    <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
-                                    <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
-                                </div>
-
-                                <div class="btn-group">
-                                    <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
-                                    <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
-                                    <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
-                                    <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
-                                </div>
-
-                                <div class="btn-group">
-                                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
-                                    <div class="dropdown-menu input-append">
-                                        <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
-                                        <button class="btn" type="button">Add</button>
-                                    </div>
-                                    <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
-                                </div>
-
-                                <div class="btn-group">
-                                    <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-                                    <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
-                                </div>
-
-                                <div class="btn-group">
-                                    <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
-                                    <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
-                                </div>
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <textarea id="body" class="body" name="body" rows="10" cols="60" placeholder="Type your post here..." required></textarea>
                             </div>
-
-                            <div id="editor-one" class="editor-wrapper"></div>
-
-                            <textarea name="descr" id="descr" style="display:none;"></textarea>
-
-                            <br />
-
-                            <div class="ln_solid"></div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12 col-md-offset-2">
+                            <button type="submit" class="btn btn-success btn-block">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -141,4 +85,19 @@
 @endsection
 
 
-@yield('page_script')
+@section('page_script')
+
+    <!-- CK Editor -->
+     <script src="{{asset('bower_components/ckeditor/ckeditor.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+    <script>
+        $(function () {
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace('body')
+            //bootstrap WYSIHTML5 - text editor
+            $('.textarea').wysihtml5()
+        })
+    </script>
+
+@endsection

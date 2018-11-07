@@ -59,27 +59,31 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('/', [
 			'uses' => 'Member\Dashboard@index', 'as' => 'membership_record'
 		]);
-		
-		//Forum Controller
-		Route::get('/forum', [
-			'uses' => 'ForumController@forum', 'as' => 'forum'
-		]);
-		Route::get('/forum/post/add', [
-			'uses' => 'ForumController@add_post', 'as' => 'add_forum_post'
-		]);
-		Route::get('/forum/post/1', [
-			'uses' => 'ForumController@single_post', 'as' => 'view_single_post'
-		]);
 
-		//Profile Controller
-		Route::get('profile', [
-			'uses' => 'ProfileController@profile', 'as' => 'my_profile'
-		]);
+//Forum Controller
+        Route::get('/forum', [
+            'uses' => 'ForumController@forum', 'as' => 'forum'
+        ]);
+        Route::get('/forum/post/add', [
+            'uses' => 'ForumController@add_post', 'as' => 'add_forum_post'
+        ]);
+        Route::get('/forum/post/1', [
+            'uses' => 'ForumController@single_post', 'as' => 'view_single_post'
+        ]);
+        Route::post('/forum/post/save', [
+            'uses' => 'ForumController@save_post', 'as' => 'save_forum_post'
+        ]);
 
-		//Users Controller
-		Route::get('/users/view', [
-			'uses' => 'UsersController@view_users', 'as' => 'view_users'
-		]);
+//Profile Controller
+        Route::get('profile', [
+            'uses' => 'ProfileController@profile', 'as' => 'my_profile'
+        ]);
+
+//Users Controller
+        Route::get('/users/view', [
+            'uses' => 'UsersController@view_users', 'as' => 'view_users'
+        ]);
+
 		
 	});
 });
@@ -126,4 +130,3 @@ Route::group(['middleware' => 'guest'], function () {
 		
 	});
 	});
-

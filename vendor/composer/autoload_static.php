@@ -472,6 +472,7 @@ class ComposerStaticInit706a77bb765abeb42f1df7bae162a23e
         'App\\Policies\\TopicPolicy' => __DIR__ . '/../..' . '/app/Policies/TopicPolicy.php',
         'App\\Policies\\UserPolicy' => __DIR__ . '/../..' . '/app/Policies/UserPolicy.php',
         'App\\Post' => __DIR__ . '/../..' . '/app/Post.php',
+        'App\\PostCategory' => __DIR__ . '/../..' . '/app/PostCategory.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
