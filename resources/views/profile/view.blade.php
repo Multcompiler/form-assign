@@ -35,7 +35,79 @@
 
 @section('main')
 
+
     <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="well" style="overflow: auto">
+                <div class="col-md-9">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <div class="input-prepend input-group">
+                                        <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                        <input type="text" name="reservation" id="reservation" class="form-control" value="01/01/2016 - 01/25/2016" />
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="col-md-3">
+                    <button href="#" class="btn btn-success btn-block">Request Code</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="alert alert-warning alert-dismissible fade in text-center" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <span style="font-size: 15px;">
+                    <strong>Pending!</strong> Please wait while your Code its processing. <br/>
+                </span>
+
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="alert alert-info alert-dismissible fade in  text-center" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <span style="font-size: 15px;">
+                    <strong>Success!</strong> Your Subscription Code Successful Created. <br/>
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="well" style="overflow: auto">
+                <div class="row">
+
+                    <div class="col-sm-9">
+                        <div class="form-horizontal form-label-left">
+                            <div class="form-group">
+                                <label class="control-label col-md-4 col-sm-4 col-xs-12" for="copyTarget">
+                                    Token:
+                                </label>
+                                <div class="col-md-8 col-sm-8 col-xs-12">
+                                    <input type="text" class="form-control" id="copyTarget" value="8MmWQubXwa4abpVWTOpxEdu99J2z6JJT7hEs3juoBAg" readonly="readonly">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-primary" id="copyButton">Copy</button>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <div class="col-md-9 col-sm-9 col-xs-12">
             <div class="x_panel">
                 <div class="x_content">
@@ -249,10 +321,6 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-
-
-                            <!-- Smart Wizard -->
-                            <p>This is a basic form wizard example that inherits the colors from the selected scheme.</p>
                             <div id="wizard" class="form_wizard wizard_horizontal">
                                 <ul class="wizard_steps">
                                     <li>
@@ -278,22 +346,14 @@
                                             <span class="step_no">3</span>
                                             <span class="step_descr">
                                               Step 3<br />
-                                              <small>Step 3 description</small>
+                                              <small>Bio Description</small>
                                           </span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#step-4">
-                                            <span class="step_no">4</span>
-                                            <span class="step_descr">
-                                               Step 4 <br />
-                                              <small>Subscription Code</small>
-                                          </span>
-                                        </a>
-                                    </li>
+
                                 </ul>
                                 <div id="step-1">
-                                    <form class="form-horizontal form-label-left">
+                                    <div class="form-horizontal form-label-left">
 
                                         <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First Name <span class="required">*</span>
@@ -322,48 +382,54 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
                                             </label>
-                                            <div class="col-md-7 col-sm-7w col-xs-12">
-                                                <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                                <div class="control-group">
+                                                    <div class="controls">
+                                                        <div class="xdisplay_inputx form-group has-feedback">
+                                                            <input type="text" class="form-control has-feedback-left date_of_birth" id="single_cal2" placeholder="Date Of Birth" aria-describedby="inputSuccess2Status2">
+                                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                                            <span id="inputSuccess2Status2" class="sr-only">(success)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
-                                    </form>
+                                    </div>
 
                                 </div>
                                 <div id="step-2">
-                                    <h2 class="StepTitle">Step 2 Content</h2>
-                                    <p>
-                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                                <div id="step-3">
-                                    <h2 class="StepTitle">Step 3 Content</h2>
-                                    <p>
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                                <div id="step-4">
-                                    <h2 class="StepTitle">Step 4 Content</h2>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Membership Token<span class="required">*</span>
-                                        </label>
+                                    <div class="form-horizontal form-label-left">
 
-                                        <div class="col-md-7 col-sm-7 col-xs-12">
-                                            <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Location <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                                <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">P.o Box <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                                <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12" placeholder="453">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div id="step-3">
+                                    <div class="form-horizontal form-label-left">
 
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Bio <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-7 col-sm-7w col-xs-12">
+                                            <textarea  name="bio" class="form-control col-md-7 col-xs-12" required="required"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
                             </div>
                             <!-- End SmartWizard Content -->
 
@@ -376,6 +442,79 @@
 
 
 @section('page_script')
+
+    <script>
+        document.getElementById("copyButton").addEventListener("click", function() {
+            copyToClipboardMsg(document.getElementById("copyTarget"), "msg");
+        });
+
+        function copyToClipboardMsg(elem, msgElem) {
+            var succeed = copyToClipboard(elem);
+            var msg;
+            if (!succeed) {
+                msg = "Copy not supported or blocked.  Press Ctrl+c to copy."
+            } else {
+                msg = "Token copied to the clipboard."
+            }
+            if (typeof msgElem === "string") {
+                msgElem = document.getElementById(msgElem);
+            }
+            msgElem.innerHTML = msg;
+            setTimeout(function() {
+                msgElem.innerHTML = "";
+            }, 2000);
+        }
+
+        function copyToClipboard(elem) {
+            // create hidden text element, if it doesn't already exist
+            var targetId = "_hiddenCopyText_";
+            var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+            var origSelectionStart, origSelectionEnd;
+            if (isInput) {
+                // can just use the original source element for the selection and copy
+                target = elem;
+                origSelectionStart = elem.selectionStart;
+                origSelectionEnd = elem.selectionEnd;
+            } else {
+                // must use a temporary form element for the selection and copy
+                target = document.getElementById(targetId);
+                if (!target) {
+                    var target = document.createElement("textarea");
+                    target.style.position = "absolute";
+                    target.style.left = "-9999px";
+                    target.style.top = "0";
+                    target.id = targetId;
+                    document.body.appendChild(target);
+                }
+                target.textContent = elem.textContent;
+            }
+            // select the content
+            var currentFocus = document.activeElement;
+            target.focus();
+            target.setSelectionRange(0, target.value.length);
+
+            // copy the selection
+            var succeed;
+            try {
+                succeed = document.execCommand("copy");
+            } catch(e) {
+                succeed = false;
+            }
+            // restore original focus
+            if (currentFocus && typeof currentFocus.focus === "function") {
+                currentFocus.focus();
+            }
+
+            if (isInput) {
+                // restore prior selection
+                elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+            } else {
+                // clear temporary content
+                target.textContent = "";
+            }
+            return succeed;
+        }
+    </script>
 
     {{Html::script('vendors/fastclick/lib/fastclick.js')}}
     {{Html::script('vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js')}}

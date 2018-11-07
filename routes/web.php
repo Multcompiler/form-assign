@@ -72,7 +72,7 @@ Route::group(['middleware' => 'auth'], function () {
 		]);
 
 		//Profile Controller
-		Route::get('/profile', [
+		Route::get('profile', [
 			'uses' => 'ProfileController@profile', 'as' => 'my_profile'
 		]);
 

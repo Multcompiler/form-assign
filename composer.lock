@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "fd1f6af36579b297a3c1ace307a01f99",
@@ -2118,18 +2118,6 @@
             "time": "2018-07-19T23:38:55+00:00"
         },
         {
-
-            "name": "spatie/laravel-permission",
-            "version": "2.24.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "867df3945e5c622e2e310c36cf226fe4594d7d0f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/867df3945e5c622e2e310c36cf226fe4594d7d0f",
-                "reference": "867df3945e5c622e2e310c36cf226fe4594d7d0f",
             "name": "santigarcor/laratrust",
             "version": "5.0.9",
             "source": {
@@ -2141,7 +2129,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/santigarcor/laratrust/zipball/526cc3e8970c35b97c71a7a6d8b63c2073568bb1",
                 "reference": "526cc3e8970c35b97c71a7a6d8b63c2073568bb1",
-
                 "shasum": ""
             },
             "require": {
@@ -2171,72 +2158,6 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Spatie\\Permission\\": "src"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Permission handling for Laravel 5.4 and up",
-            "homepage": "https://github.com/spatie/laravel-permission",
-            "keywords": [
-                "acl",
-                "laravel",
-                "permission",
-                "security",
-                "spatie"
-            ],
-            "time": "2018-11-07T02:15:22+00:00"
-        },
-        {
-            "name": "summerblue/administrator",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/summerblue/administrator.git",
-                "reference": "173b3babb0f6d1daade40ff13af22ebcb6baa5ff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/summerblue/administrator/zipball/173b3babb0f6d1daade40ff13af22ebcb6baa5ff",
-                "reference": "173b3babb0f6d1daade40ff13af22ebcb6baa5ff",
-                "shasum": ""
-            },
-            "require": {
-                "ckeditor/ckeditor": "4.*",
-                "laravel/framework": "5.5.*",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~5.7.12"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Frozennode\\Administrator\\AdministratorServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "src/controllers"
-                ],
-                "psr-0": {
-                    "Frozennode\\Administrator": "src/",
                     "Laratrust\\": "src/"
                 }
             },

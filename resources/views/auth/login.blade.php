@@ -56,14 +56,14 @@
                         </div>
                     @endif
                     <div class="wrap-input100 validate-input {{ $errors->has('email') ? ' has-error' : '' }}" data-validate = "Valid email is: a@b.c">
-                        <input class="input100" type="text" name="email" value="{{ old('email') }}" required>
+                        <input class="input100" type="text" name="email" value="{{ old('email') }}" required="required">
                         <span class="focus-input100" data-placeholder="Email"></span>
                     </div>
                     <div class="wrap-input100 validate-input{{ $errors->has('password') ? ' has-error' : '' }}" data-validate="Enter password">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-                        <input class="input100" type="password" name="password">
+                        <input class="input100" type="password" name="password" required="required">
                         <span class="focus-input100" data-placeholder="Password"></span>
                     </div>
                     <div class="validate-input">
@@ -110,6 +110,8 @@
 <script src="{{asset('vendor/countdowntime/countdowntime.js')}}"></script>
 <!--===============================================================================================-->
 <script src="{{asset('js/js/main.js')}}"></script>
+<script src="{{asset('vendors/validator/validator.js')}}"></script>
+
 <script>
     $(function () {
         $('[data-toggle="tooltip"]').tooltip('show')
