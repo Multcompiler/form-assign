@@ -68,13 +68,18 @@ class Handler extends ExceptionHandler
 		
 		$prefix = $request->route()->getPrefix();
 		
-		if($prefix = 'admin')
+		if($prefix == 's_admin')
 		{
-			return redirect('admin/login');
+			return redirect('s_admin/auth/login');
+		
+		}elseif($prefix == 'member')
+		{
+			return redirect('member/auth/login');
+			
 		}else
 		{
 			return redirect()->guest(route('login'));
-		}	
+		}			
 		
 	}
         
