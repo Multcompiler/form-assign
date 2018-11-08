@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Forum </title>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}" media="all" />
     <!-- Slick nav CSS -->
@@ -127,80 +129,6 @@
         </div>
     </div>
 </section><!-- hero area end -->
-
-<!-- testimonial section start -->
-<section class="testimonial-area ptb-90">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="sec-title">
-                    <h2>Testimonials<span class="sec-title-border"><span></span><span></span><span></span></span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="testimonial-wrap">
-                    <div class="single-testimonial-box">
-                        <div class="author-img">
-                            <img src="{{asset('assets/img/author/author1.jpg')}}" alt="author" />
-                        </div>
-                        <h5>Mary Balogh</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </p>
-                        <div class="author-rating">
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                        </div>
-                    </div>
-                    <div class="single-testimonial-box">
-                        <div class="author-img">
-                            <img src="{{asset('assets/img/author/author2.jpg')}}" alt="author" />
-                        </div>
-                        <h5>Mary Balogh</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </p>
-                        <div class="author-rating">
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                        </div>
-                    </div>
-                    <div class="single-testimonial-box">
-                        <div class="author-img">
-                            <img src="{{asset('assets/img/author/author2.jpg')}}" alt="author" />
-                        </div>
-                        <h5>Mary Balogh</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </p>
-                        <div class="author-rating">
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                            <i class="icofont icofont-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-thumb">
-                    <div class="thumb-prev">
-                        <div class="author-img">
-                            <img src="{{asset('assets/img/author/author2.jpg')}}" alt="author" />
-                        </div>
-                    </div>
-                    <div class="thumb-next">
-                        <div class="author-img">
-                            <img src="{{asset('assets/img/author/author2.jpg')}}" alt="author" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- testimonial section end -->
 <!-- counter section start -->
 <section class="counter-area ptb-90">
     <div class="container">
@@ -336,10 +264,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="subscribe-form">
-                    <form action="#">
-                        <input type="text" placeholder="Your email address here">
-                        <button type="submit">Subcribe</button>
-                    </form>
+                        <input type="text" id="email" placeholder="Your email address here">
+                        <button onclick="subscribe()" id="subscribe_btn">Subcribe</button>
                 </div>
             </div>
         </div>
@@ -419,6 +345,36 @@
 <script src="{{asset('assets/js/switcher.js')}}"></script>
 <!-- main JS -->
 <script src="{{asset('assets/js/main.js')}}"></script>
+
+
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+<script>
+    subscribe = function () {
+        $("#subscribe_btn").html("<i class=\"fa fa-fw fa-spinner fa-spin\"></i>");
+
+        $.ajax({
+            url: '/add/users/subscription',
+            type: 'POST',
+            data: {email: $("#email").val()},
+
+            success: function (response) {
+
+                setTimeout(function(){
+
+                    $("#subscribe_btn").html("Subscribed <i class=\"icofont icofont-check\"></i>");
+
+                    $('#email').val('');
+                },2000);
+            }
+        });
+    }
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>

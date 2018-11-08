@@ -1164,7 +1164,7 @@ h4.post-title a {
     color: #fff;
     border-bottom: 1px solid #fff;
 }
-.subscribe-form form {
+.subscribe-form {
     position: relative;
     max-width: 580px;
     margin: auto;
@@ -1173,8 +1173,9 @@ h4.post-title a {
     display: inline-block;
     width: 100%;
     background: #fff;
+    left: 25%;
 }
-.subscribe-form form input {
+.subscribe-form input {
     background: transparent;
     border: 0;
     width: 70%;
@@ -1182,8 +1183,8 @@ h4.post-title a {
     float: left;
     margin: 0;
 }
-.subscribe-form form button {
-    width: 29%;
+.subscribe-form button {
+    width: 31%;
     padding: 15px 30px;
     border: 0;
     border-radius: 30px;

@@ -67,9 +67,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => 'guest'], function () {
 	
-	Route::get('/', function () {
-				return view('index');
-		});
+	Route::get('/',[
+            'uses' => 'HomeController@index'
+        ]);
 		
     // Authentication Routes...
 	Route::group(['prefix' => 'member'], function () {
@@ -152,4 +152,7 @@ Route::delete('/user/delete/information/{id}', [
 ]);
 Route::get('/get/all/users', [
     'uses' => 'UsersController@forum_users_json'
+]);
+Route::post('/add/users/subscription', [
+    'uses' => 'HomeController@subscribe'
 ]);
