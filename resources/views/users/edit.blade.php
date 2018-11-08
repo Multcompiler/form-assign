@@ -98,6 +98,11 @@
                                     <option value="inactive"> Inactive </option>
                                 </select>
                             </div>
+                            <br/>
+                            <div class="input-group col-md-12">
+                                <label for="phone" class="control-label">Bio:</label>
+                                {{ Form::textarea('bio',$user_details[0]['bio'], ['id'=>'comment-comment','class' => 'form-control', 'rows' => '3']) }}
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default"

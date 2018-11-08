@@ -144,6 +144,9 @@ Route::put('/user/edit/save/{id}', [
 Route::get('/user/confirm-delete/{id}', [
     'uses' => 'UsersController@delete_user', 'as' => 'remove_user'
 ]);
+Route::get('/user/view/{id}', [
+    'uses' => 'UsersController@view_user', 'as' => 'admin_user_view'
+]);
 Route::delete('/user/delete/information/{id}', [
     'uses' => 'UsersController@remove_user_details', 'as' => 'delete_information_user'
 ]);
