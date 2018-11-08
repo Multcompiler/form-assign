@@ -20,77 +20,27 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                     <div class="x_content">
-                        <p class="text-muted font-13 m-b-30">
+                        <h4 class="text-muted font-13 m-b-30" style="margin-bottom: 20px;">
                             All System Users
-                        </p>
-                        <table id="datatable" class="table table-striped table-bordered">
+                        </h4>
+                        <table id="datatable1" class="table table-striped table-bordered user_list">
                             <thead>
                             <tr>
                                 <th>Firstname</th>
                                 <th>Lastname</th>
-                                <th>Gender</th>
                                 <th>Status</th>
                                 <th>Email</th>
                                 <th>Location</th>
                                 <th>Date of Birth</th>
                                 <th>Postal Code</th>
+                                <th>Role</th>
                                 <th></th>
                             </tr>
                             </thead>
 
 
                             <tbody>
-                            <tr>
-                                <td>Tiger</td>
-                                <td>Architect</td>
-                                <td>Male</td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-xs">Active</button>
-                                </td>
-                                <td>Tiger@gmail.com</td>
-                                <td>Kimara</td>
-                                <td>2000/04/25</td>
-                                <td>P.o Box 2013</td>
-                                <td>
-                                    <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                    <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                    <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger</td>
-                                <td>Architect</td>
-                                <td>Male</td>
-                                <td>
-                                    <button type="button" class="btn btn-success btn-xs">Active</button>
-                                </td>
-                                <td>Tiger@gmail.com</td>
-                                <td>Kimara</td>
-                                <td>2000/04/25</td>
-                                <td>P.o Box 2013</td>
-                                <td>
-                                    <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                    <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                    <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger</td>
-                                <td>Architect</td>
-                                <td>Male</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-xs">Disabled</button>
-                                </td>
-                                <td>Tiger@gmail.com</td>
-                                <td>Kimara</td>
-                                <td>2000/04/25</td>
-                                <td>P.o Box 2013</td>
-                                <td>
-                                    <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                    <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                    <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                </td>
-                            </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -102,6 +52,45 @@
 
 @section('page_script')
 
+    <script>
+        $(document).ready(function () {
+            var table = $('#datatable1').DataTable( {
+                "ajax": "/get/all/users",
+                "columns": [
+                    { "data" : "firstname" },
+                    { "data" : "lastname" },
+                    {
+                        "data": "id",
+                        "bSortable": false,
+                        "mRender": function(data, type, full) {
+                            return '<button type="button" class="btn btn-success btn-xs">Active</button>';
+                        }
+                    },
+                    { "data" : "email" },
+                    { "data" : "location" },
+                    { "data" : "date_of_birth" },
+                    { "data" : "postal_code" },
+                    { "data" : "role" },
+                    {
+                        "data": "id",
+                        "bSortable": false,
+                        "mRender": function(data, type, full) {
+
+                            return '<div class="btn btn-group">'+
+                                '<a href="/user/edit/'+full.id+'" class="btn btn-info btn-sm">Edit</a>'+
+                                '<a href="/user/view/'+full.id+'" class="btn btn-primary btn-sm">Show</i></a>'+
+                                '<a href="/user/confirm-delete/'+full.id+'" class="btn btn-danger btn-sm">' +
+                                'Delete</a>'+
+                                '<a href="/user/'+full.id+'/membership/add" class="btn btn-info btn-sm">Membership</a>'+
+                                '</div>';
+
+
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
     {{Html::script('vendors/datatables.net/js/jquery.dataTables.min.js')}}
     {{Html::script('vendors/datatables.net-bs/js/dataTables.bootstrap.min.js')}}
     {{Html::script('vendors/datatables.net-buttons/js/dataTables.buttons.min.js')}}

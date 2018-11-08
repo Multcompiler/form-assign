@@ -121,6 +121,9 @@ Route::get('/forum/post/1', [
 Route::get('/get/all/post', [
     'uses' => 'ForumController@forum_posts_json'
 ]);
+Route::get('/get/all/users', [
+    'uses' => 'ForumController@forum_users_json'
+]);
 Route::post('/forum/post/save', [
     'uses' => 'ForumController@save_post', 'as' => 'save_forum_post'
 ]);
