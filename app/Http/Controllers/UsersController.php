@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
+use App\Post;
 use App\Role;
 use App\User;
 use App\UserProfile;
 use App\UserRole;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class UsersController extends Controller
 {
@@ -50,9 +53,49 @@ class UsersController extends Controller
             'location' => UserProfile::where("id",$user->id)->pluck("location")->first(),
         ];
 
-      //  dd($user_details[0]['id']);
         return view('users.edit' ,compact('user_details'));
     }
+
+
+    public function delete_user($id){
+        $user_details = array();
+        $user = User::find($id);
+        $user_details[] = [
+            'id' => $user->id,
+            'firstname' => UserProfile::where("id",$user->id)->pluck("firstname")->first(),
+            'lastname' => UserProfile::where("id",$user->id)->pluck("lastname")->first(),
+            'role' => Role::where("id",UserRole::where("user_id",$user->id)->pluck("role_id")->first())->pluck("display_name")->first(),
+        ];
+
+        return view('users.delete' ,compact('user_details'));
+    }
+
+    public function remove_user_details($id){
+        $user = User::find($id);
+
+        if(UserProfile::where("id",$user->id)->count() > 0){
+            UserProfile::where("id",$user->id)->delete();
+        }
+
+        if(Post::where("user_id",$user->id)->count() > 0){
+           $posts = Post::where("user_id",$user->id)->get();
+            foreach ($posts as $post){
+                Comment::where("post_id",$post->id)->delete();
+            }
+
+           Post::where("user_id",$user->id)->delete();
+
+        }
+
+        UserRole::where("user_id",$user->id)->delete();
+
+        $user->delete();
+
+        Session::flash('success','User Successfully Deleted');
+        return redirect()->route('view_users');
+    }
+
+
     public function save_edited_user(Request $request){
         $this->validate($request, [
             'firstname' => 'required',

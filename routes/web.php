@@ -141,6 +141,12 @@ Route::get('/user/edit/{id}', [
 Route::put('/user/edit/save/{id}', [
     'uses' => 'UsersController@save_edited_user', 'as' => 'save_edited_user'
 ]);
+Route::get('/user/confirm-delete/{id}', [
+    'uses' => 'UsersController@delete_user', 'as' => 'remove_user'
+]);
+Route::delete('/user/delete/information/{id}', [
+    'uses' => 'UsersController@remove_user_details', 'as' => 'delete_information_user'
+]);
 Route::get('/get/all/users', [
     'uses' => 'UsersController@forum_users_json'
 ]);
