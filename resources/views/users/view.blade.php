@@ -17,6 +17,26 @@
 @section('main')
 
     <div class="row">
+        <div class="col-md-12">
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-check"></i> Success!</h4>
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-ban"></i> Errors!</h4>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                     <div class="x_content">
@@ -63,7 +83,12 @@
                         "data": "id",
                         "bSortable": false,
                         "mRender": function(data, type, full) {
-                            return '<button type="button" class="btn btn-success btn-xs">Active</button>';
+                            if(full.status == "inactive"){
+                                return '<button type="button" class="btn btn-danger btn-xs">Inactive</button>';
+                            }else{
+                                return '<button type="button" class="btn btn-success btn-xs">Active</button>';
+                            }
+
                         }
                     },
                     { "data" : "email" },
@@ -75,14 +100,23 @@
                         "data": "id",
                         "bSortable": false,
                         "mRender": function(data, type, full) {
+                                if(full.role != "Superadministrator"){
+                                    return  '<div class="btn btn-group">'+
+                                    '<a href="/user/edit/'+full.id+'" class="btn btn-info btn-sm">Edit</a>'+
+                                    '<a href="/user/view/'+full.id+'" class="btn btn-primary btn-sm">Show</i></a>'+
+                                    '<a href="/user/confirm-delete/'+full.id+'" class="btn btn-danger btn-sm">' +
+                                    'Delete</a>'+
+                                    '<a href="/user/'+full.id+'/membership/add" class="btn btn-info btn-sm">Membership</a>'+
+                                    '</div>';
+                                }else{
+                                    return  '<div class="btn btn-group">'+
+                                        '<a href="/user/edit/'+full.id+'" class="btn btn-info btn-sm">Edit</a>'+
+                                        '<a href="/user/view/'+full.id+'" class="btn btn-primary btn-sm">Show</i></a>'+
+                                        '<a href="/user/confirm-delete/'+full.id+'" class="btn btn-danger btn-sm">' +
+                                        'Delete</a>'+
+                                        '</div>';
+                                }
 
-                            return '<div class="btn btn-group">'+
-                                '<a href="/user/edit/'+full.id+'" class="btn btn-info btn-sm">Edit</a>'+
-                                '<a href="/user/view/'+full.id+'" class="btn btn-primary btn-sm">Show</i></a>'+
-                                '<a href="/user/confirm-delete/'+full.id+'" class="btn btn-danger btn-sm">' +
-                                'Delete</a>'+
-                                '<a href="/user/'+full.id+'/membership/add" class="btn btn-info btn-sm">Membership</a>'+
-                                '</div>';
 
 
                         }

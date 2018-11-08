@@ -35,25 +35,6 @@ class ForumController extends Controller
 }
 
 
-    public function forum_users_json(){
-        $data_collection = array();
-        $users = User::all();
-
-        foreach ($users as $user){
-            $data_collection[] = [
-                'id' => $user->id,
-                'email' => $user->email,
-                'firstname' => UserProfile::where("user_id",$user->id)->pluck("firstname")->first(),
-                'lastname' => UserProfile::where("user_id",$user->id)->pluck("lastname")->first(),
-                'location' => UserProfile::where("user_id",$user->id)->pluck("location")->first(),
-                'gender' => UserProfile::where("user_id",$user->id)->pluck("gender")->first(),
-                'date_of_birth' => UserProfile::where("user_id",$user->id)->pluck("date_of_birth")->first(),
-                'postal_code' => UserProfile::where("user_id",$user->id)->pluck("postal_code")->first(),
-                'role' => Role::where("id",UserRole::where("user_id",$user->id)->pluck("role_id")->first())->pluck("display_name")->first(),
-               ];
-        }
-        return response()->json(['data' => $data_collection]);
-    }
 
 
 

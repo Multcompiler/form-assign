@@ -121,9 +121,7 @@ Route::get('/forum/post/1', [
 Route::get('/get/all/post', [
     'uses' => 'ForumController@forum_posts_json'
 ]);
-Route::get('/get/all/users', [
-    'uses' => 'ForumController@forum_users_json'
-]);
+
 Route::post('/forum/post/save', [
     'uses' => 'ForumController@save_post', 'as' => 'save_forum_post'
 ]);
@@ -136,4 +134,13 @@ Route::get('profile', [
 //Users Controller
 Route::get('/users/view', [
     'uses' => 'UsersController@view_users', 'as' => 'view_users'
+]);
+Route::get('/user/edit/{id}', [
+    'uses' => 'UsersController@edit_user', 'as' => 'edit_single_user'
+]);
+Route::put('/user/edit/save/{id}', [
+    'uses' => 'UsersController@save_edited_user', 'as' => 'save_edited_user'
+]);
+Route::get('/get/all/users', [
+    'uses' => 'UsersController@forum_users_json'
 ]);
